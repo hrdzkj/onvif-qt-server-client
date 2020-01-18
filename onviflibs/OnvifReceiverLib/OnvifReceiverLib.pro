@@ -11,6 +11,7 @@ DESTDIR = ../../OnvifDist
 TARGET = OnvifReceiverLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
 
 SOURCES += \
     onvif/receiverserviceimplement.cpp \

@@ -11,6 +11,7 @@ DESTDIR = ../../OnvifDist
 TARGET = OnvifMediaLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
 
 SOURCES += \
     onvif/mediaserviceimplement.cpp \
@@ -31,7 +32,8 @@ HEADERS  += \
     soap/onvifmediaStub.h \
     soap/onvifmediaMediaBindingService.h \
     soap/onvifmediaMediaBindingProxy.h \
-    soap/duration.h
+    soap/duration.h \
+    exportdef/mydll_global.h
 
 win32{
     LIBS += -lws2_32

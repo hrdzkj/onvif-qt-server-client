@@ -2,8 +2,9 @@
 #define EVENT_H
 
 #include <QString>
+#include "exportdef\mydll_global.h"
 
-class Event
+class MYDLLSHARED_EXPORT Event
 {
 public:
     Event();

@@ -3,7 +3,9 @@
 
 #include <QString>
 #include <string>
-class Analytics
+#include "exportdef\mydll_global.h"
+
+class MYDLLSHARED_EXPORT  Analytics
 {
 public:
     Analytics();

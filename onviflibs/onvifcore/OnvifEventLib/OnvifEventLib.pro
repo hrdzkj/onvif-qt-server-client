@@ -11,6 +11,7 @@ DESTDIR = ../../../OnvifDist
 TARGET = OnvifEventLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
 
 SOURCES += \
     onvif/event.cpp \

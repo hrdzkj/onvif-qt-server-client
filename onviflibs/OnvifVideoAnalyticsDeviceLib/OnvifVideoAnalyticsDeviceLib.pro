@@ -12,6 +12,7 @@ DESTDIR = ../../OnvifDist
 TARGET = OnvifVideoAnalyticsDeviceLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
 
 SOURCES += \
     onvif/videoanalyticsdevice.cpp \

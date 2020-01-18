@@ -3,7 +3,11 @@
 
 #include <QString>
 #include <string>
-class Media
+#include "exportdef\mydll_global.h"
+
+
+
+class MYDLLSHARED_EXPORT Media
 {
 public:
     Media();

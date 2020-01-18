@@ -3,7 +3,9 @@
 
 #include <QString>
 #include <string>
-class Receiver
+#include "exportdef\mydll_global.h"
+
+class MYDLLSHARED_EXPORT Receiver
 {
 public:
     Receiver();

@@ -12,6 +12,7 @@ DESTDIR = ../../OnvifDist
 TARGET = OnvifDisplayLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
 
 SOURCES += \
     onvif/display.cpp \

@@ -12,6 +12,7 @@ DESTDIR = ../../OnvifDist
 TARGET = OnvifPTZLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
 
 SOURCES += \
     onvif/ptz.cpp \

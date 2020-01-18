@@ -1,7 +1,9 @@
 #ifndef DESCDEVICE
 #define DESCDEVICE
 
-struct DescDevice{
+#include "exportdef\mydll_global.h"
+
+struct MYDLLSHARED_EXPORT DescDevice{
     int metadataversion;
     QString types;
     QString xAddrs;

@@ -12,6 +12,8 @@ DESTDIR = ../../../OnvifDist
 TARGET = OnvifDiscoveryLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
+
 SOURCES +=\
     soap/stdsoap2.cpp \
     soap/onvifdiscoC.cpp \
@@ -35,7 +37,8 @@ HEADERS  += \
     getopt/getopt.h \
     onvif/descdevice.h \
     onvif/discoverythread.h \
-    onvif/discoveryobj.h
+    onvif/discoveryobj.h\
+    exportdef/mydll_global.h
 
 
 win32 {

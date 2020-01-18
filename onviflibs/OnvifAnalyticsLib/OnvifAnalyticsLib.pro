@@ -11,6 +11,7 @@ DESTDIR = ../../OnvifDist
 TARGET = OnvifAnalyticsLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
 
 SOURCES += \
     onvif/analyticsserviceimplement.cpp \

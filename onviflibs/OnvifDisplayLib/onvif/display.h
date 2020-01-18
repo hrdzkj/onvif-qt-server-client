@@ -3,7 +3,9 @@
 
 #include <QString>
 #include <string>
-class Display
+#include "exportdef\mydll_global.h"
+
+class MYDLLSHARED_EXPORT  Display
 {
 public:
     Display();

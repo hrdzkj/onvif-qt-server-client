@@ -78,12 +78,14 @@ int DiscoveryObj::sendProb()
         res = soap_wsdd_Probe(serv,
 		  SOAP_WSDD_ADHOC,      // mode
 		  SOAP_WSDD_TO_TS,      // to a TS
-		  "soap.udp://239.255.255.250:3702",         // address of TS
-		  soap_wsa_rand_uuid(serv),                   // message ID
+          "soap.udp://239.255.255.250:3702",         // address of TS
+          soap_wsa_rand_uuid(serv),                   // message ID
           NULL,                 // ReplyTo
 		  type,
 		  scope,
 		  NULL);
+        std::cout << "liuyi test " << std::endl;
+
     }
     else
     {

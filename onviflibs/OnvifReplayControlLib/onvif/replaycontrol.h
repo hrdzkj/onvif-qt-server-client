@@ -3,7 +3,9 @@
 
 #include <QString>
 #include <string>
-class ReplayControl
+#include "exportdef\mydll_global.h"
+
+class MYDLLSHARED_EXPORT ReplayControl
 {
 public:
     ReplayControl();

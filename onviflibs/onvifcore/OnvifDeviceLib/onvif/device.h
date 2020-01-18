@@ -2,8 +2,9 @@
 #define DEVICE_H
 
 #include <QString>
+#include "exportdef\mydll_global.h"
 
-class Device
+class MYDLLSHARED_EXPORT Device
 {
 public:
     Device();

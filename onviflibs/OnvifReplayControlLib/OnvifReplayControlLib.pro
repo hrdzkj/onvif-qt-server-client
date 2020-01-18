@@ -11,6 +11,7 @@ DESTDIR = ../../OnvifDist
 TARGET = OnvifReplayControlLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
 
 SOURCES += \
     onvif/replaycontrol.cpp \

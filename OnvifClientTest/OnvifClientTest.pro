@@ -34,6 +34,8 @@ DEPENDPATH += . $$PWD/../onviflibs/onvifcore/OnvifDiscoveryLib/onvif\
             $$PWD/../onviflibs/OnvifDisplayLib/onvif\
             $$PWD/../onviflibs/OnvifPTZLib/onvif\
             $$PWD/../onviflibs/OnvifMediaLib/onvif
+
+
 INCLUDEPATH += $$PWD/../onviflibs/onvifcore/OnvifDiscoveryLib/onvif\
             $$PWD/../onviflibs/onvifcore/OnvifDeviceLib/onvif\
             $$PWD/../onviflibs/onvifcore/OnvifEventLib/onvif\
@@ -45,7 +47,10 @@ INCLUDEPATH += $$PWD/../onviflibs/onvifcore/OnvifDiscoveryLib/onvif\
             $$PWD/../onviflibs/OnvifReplayControlLib/onvif\
             $$PWD/../onviflibs/OnvifDisplayLib/onvif\
             $$PWD/../onviflibs/OnvifPTZLib/onvif\
-            $$PWD/../onviflibs/OnvifMediaLib/onvif
+            $$PWD/../onviflibs/OnvifMediaLib/onvif\
+            $$PWD/../onviflibs/onvifcore/OnvifDiscoveryLib\ #liuyi add
+
+
 LIBS +=  -L$$PWD/../../OnvifDist -lOnvifDiscoveryLib\
             -L$$PWD/../OnvifDist -lOnvifDeviceLib\
             -L$$PWD/../OnvifDist -lOnvifEventLib\

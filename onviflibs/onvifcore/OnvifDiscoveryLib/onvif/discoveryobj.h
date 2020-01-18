@@ -6,13 +6,21 @@
 #include <QObject>
 #include "descdevice.h"
 #include "discoverythread.h"
-// #include "mydllname_global.h"
+//#include "exportdef\mydll_global.h"
+
+#include <QtCore/qglobal.h>
+
+#if defined(MYDLL_LIBRARY)
+#  define MYDLLSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define MYDLLSHARED_EXPORT Q_DECL_IMPORT
+#endif
 
 enum DiscoveryMode{
     SERVER_MODE, CLIENT_MODE
 };
 
-class  DiscoveryObj: public QObject{
+class  MYDLLSHARED_EXPORT DiscoveryObj: public QObject{
 
     Q_OBJECT   
 signals:

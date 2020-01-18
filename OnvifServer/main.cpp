@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
     int tcpPort = 8004;
 
     QStringList ipStrs;
-
     foreach (const QHostAddress &address, QNetworkInterface::allAddresses()) {
         if (address.protocol() == QAbstractSocket::IPv4Protocol && address != QHostAddress(QHostAddress::LocalHost)){
 

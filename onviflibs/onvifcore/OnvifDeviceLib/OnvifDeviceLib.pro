@@ -11,6 +11,7 @@ DESTDIR = ../../../OnvifDist
 TARGET = OnvifDeviceLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
 
 SOURCES += \
     soap/onvifdeviceC.cpp \
@@ -31,7 +32,8 @@ HEADERS  += \
     soap/duration.h\
     onvif/deviceserviceextabst.h \
     onvif/device.h \
-    onvif/deviceservice.h
+    onvif/deviceservice.h \
+    exportdef/mydll_global.h
 
 win32{
     LIBS += -lws2_32

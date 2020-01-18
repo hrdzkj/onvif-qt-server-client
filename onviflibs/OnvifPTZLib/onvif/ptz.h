@@ -2,7 +2,9 @@
 #define PTZ_H
 
 #include <QString>
-class PTZ
+#include "exportdef\mydll_global.h"
+
+class MYDLLSHARED_EXPORT PTZ
 {
 public:
     PTZ();

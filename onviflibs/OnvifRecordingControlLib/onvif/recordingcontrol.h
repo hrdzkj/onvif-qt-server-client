@@ -3,7 +3,9 @@
 
 #include <QString>
 #include <string>
-class RecordingControl
+#include "exportdef\mydll_global.h"
+
+class MYDLLSHARED_EXPORT  RecordingControl
 {
 public:
     RecordingControl();

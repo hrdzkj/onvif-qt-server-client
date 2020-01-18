@@ -3,7 +3,9 @@
 
 #include <QString>
 #include <string>
-class Imaging
+#include "exportdef\mydll_global.h"
+
+class MYDLLSHARED_EXPORT Imaging
 {
 public:
     Imaging();

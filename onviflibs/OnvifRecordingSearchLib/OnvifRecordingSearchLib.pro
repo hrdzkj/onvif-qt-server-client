@@ -12,6 +12,7 @@ DESTDIR = ../../OnvifDist
 TARGET = OnvifRecordingSearchLib
 TEMPLATE = lib
 
+DEFINES += MYDLL_LIBRARY
 
 SOURCES += \
     onvif/recordingsearch.cpp \

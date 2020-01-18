@@ -3,7 +3,9 @@
 
 #include <QString>
 #include <string>
-class VideoAnalyticsDevice
+#include "exportdef\mydll_global.h"
+
+class MYDLLSHARED_EXPORT  VideoAnalyticsDevice
 {
 public:
     VideoAnalyticsDevice();
