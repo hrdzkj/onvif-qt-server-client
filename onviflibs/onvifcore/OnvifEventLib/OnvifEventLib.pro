@@ -36,6 +36,7 @@ HEADERS  += \
 
 win32{
     LIBS += -lws2_32
+    QMAKE_CXXFLAGS += /bigobj
 }
 
 DEFINES += "WITH_NONAMESPACES"

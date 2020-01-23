@@ -78,7 +78,8 @@ int DiscoveryObj::sendProb()
         res = soap_wsdd_Probe(serv,
 		  SOAP_WSDD_ADHOC,      // mode
 		  SOAP_WSDD_TO_TS,      // to a TS
-          "soap.udp://239.255.255.250:3702",         // address of TS
+         // "soap.udp://239.255.255.250:3702",         // address of TS
+          "soap.udp://10.11.3.11:3702",
           soap_wsa_rand_uuid(serv),                   // message ID
           NULL,                 // ReplyTo
 		  type,
@@ -93,7 +94,8 @@ int DiscoveryObj::sendProb()
         res = soap_wsdd_Resolve(serv,
           SOAP_WSDD_ADHOC,      // mode
           SOAP_WSDD_TO_TS,      // to a TS
-          "soap.udp://239.255.255.250:3702",         // address of TS
+          //"soap.udp://239.255.255.250:3702",         // address of TS
+          "soap.udp://10.11.3.11:3702",
           soap_wsa_rand_uuid(serv),                   // message ID
           NULL,                 // ReplyTo
           endpoint);
@@ -119,7 +121,8 @@ int DiscoveryObj::sendHello()
     printf("call soap_wsdd_Hello\n");
     int res = soap_wsdd_Hello(soap,
       SOAP_WSDD_ADHOC,      // mode
-      "soap.udp://239.255.255.250:3702",         // address of TS
+      //"soap.udp://239.255.255.250:3702",         // address of TS
+      "soap.udp://10.11.3.11:3702",
       soap_wsa_rand_uuid(soap),                   // message ID
       NULL,
       _endpoint,
@@ -142,7 +145,8 @@ int DiscoveryObj::sendBye()
     printf("call soap_wsdd_Hello\n");
     int res = soap_wsdd_Bye(soap,
       SOAP_WSDD_ADHOC,      // mode
-      "soap.udp://239.255.255.250:3702",         // address of TS
+      //"soap.udp://239.255.255.250:3702",         // address of TS
+      "soap.udp://10.11.3.11:3702",
       soap_wsa_rand_uuid(soap),                   // message ID
       _endpoint,
       _type,

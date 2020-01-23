@@ -4,7 +4,8 @@
 
 class DiscoveryThread : public QThread
 {
-    const char* host = "239.255.255.250";
+   // const char* host = "239.255.255.250";
+    const char* host = "10.11.3.11";
     int port = 3702;
 //    const int   _metadataVersion = 1;
 //    const char* _xaddr="http://localhost/service";

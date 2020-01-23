@@ -33,7 +33,6 @@ void Device::getDeviceInformation(QString devServiceURL) {
         qDebug() << out.SerialNumber.data();
         qDebug() << out.HardwareId.data();
         qDebug() << out.Manufacturer.data();
-
     } else {
         //error
         d.soap_print_fault(stderr);

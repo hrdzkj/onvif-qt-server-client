@@ -95,7 +95,6 @@ void MainWindow::on_btnGetDeviceInformation_clicked()
         DescDevice device = ui->onvifDevCB->currentData().value<DescDevice>();
         qDebug() << "For device " << device.xAddrs;
         Device::getDeviceInformation(device.xAddrs);
-        //Device::getDeviceInformation("http://127.0.0.1:8080");
     }
 }
 
