@@ -39,11 +39,11 @@ SOURCES += \
     onvif/main.cpp \
     soap/dom.cpp \
     soap/onvifdeviceC.cpp \
-    soap/plugin/mecevp.c \
-    soap/plugin/smdevp.c \
-    soap/plugin/threads.c \
-    soap/plugin/wsaapi.c \
-    soap/plugin/wsseapi.cpp
+    soap/plugin/wsseapi.cpp \
+    soap/plugin/mecevp.cpp \
+    soap/plugin/smdevp.cpp \
+    soap/plugin/threads.cpp \
+    soap/plugin/wsaapi.cpp
 
 
 HEADERS  += \
