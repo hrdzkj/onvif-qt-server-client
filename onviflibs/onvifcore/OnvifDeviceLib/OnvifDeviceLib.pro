@@ -15,7 +15,8 @@ TEMPLATE = app
 CONFIG += console
 
 DEFINES += MYDLL_LIBRARY
-
+DEFINED += WITH_DOM
+DEFINED += WITH_OPENSSL
 
 LIBS += -L"C:\openssl-1.0.2u\lib" -llibeay32
 LIBS += -L"C:\openssl-1.0.2u\lib" -lssleay32
