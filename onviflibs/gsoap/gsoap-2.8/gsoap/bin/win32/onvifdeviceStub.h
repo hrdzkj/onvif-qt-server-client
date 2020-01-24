@@ -18,6 +18,9 @@ compiling, linking, and/or using OpenSSL is allowed.
 #define SOAP_NAMESPACE_OF_wsrfbf	"http://docs.oasis-open.org/wsrf/bf-2"
 #define SOAP_NAMESPACE_OF_wstop	"http://docs.oasis-open.org/wsn/t-1"
 #define SOAP_NAMESPACE_OF_tds	"http://www.onvif.org/ver10/device/wsdl"
+#ifndef WITH_NONAMESPACES
+#define WITH_NONAMESPACES
+#endif
 #include "stdsoap2.h"
 #if GSOAP_VERSION != 20822
 # error "GSOAP VERSION 20822 MISMATCH IN GENERATED CODE VERSUS LIBRARY CODE: PLEASE REINSTALL PACKAGE"

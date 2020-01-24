@@ -1,7 +1,7 @@
 /*
-    smdevp.h
+	smdevp.h
 
-    gSOAP interface for (signed) message digest
+	gSOAP interface for (signed) message digest
 
 gSOAP XML Web services tools
 Copyright (C) 2000-2010, Robert van Engelen, Genivia Inc., All Rights Reserved.

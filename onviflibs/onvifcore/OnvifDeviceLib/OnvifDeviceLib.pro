@@ -17,8 +17,8 @@ CONFIG += console
 DEFINES += MYDLL_LIBRARY
 
 
-# QMAKE_CXXFLAGS += -DWITH-DOM -DWITH-OPENSSL
-# QMAKE_CFLAGS += -DWITH-DOM -DWITH-OPENSSL
+LIBS += -L"C:\openssl-1.0.2u\lib" -llibeay32
+LIBS += -L"C:\openssl-1.0.2u\lib" -lssleay32
 
 # include openssl
 INCLUDEPATH += C:\openssl-1.0.2u\include \
@@ -37,12 +37,13 @@ SOURCES += \
     onvif/deviceserviceimplement.cpp \
     onvif/main.cpp \
     soap/dom.cpp \
-    soap/plugin/wsseapi.cpp \
-    soap/plugin/wsseapi.cpp \
-    soap/plugin/wsaapi.cpp \
-    soap/plugin/threads.cpp \
-    soap/plugin/smdevp.cpp \
-    soap/plugin/mecevp.cpp
+    soap/onvifdeviceC.cpp \
+    soap/plugin/mecevp.c \
+    soap/plugin/smdevp.c \
+    soap/plugin/threads.c \
+    soap/plugin/wsaapi.c \
+    soap/plugin/wsseapi.cpp
+
 
 HEADERS  += \
     soap/onvifdeviceH.h \

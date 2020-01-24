@@ -50,7 +50,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 #define WSAAPI_H
 
 //#include "soapH.h"	/* replace with soapcpp2-generated *H.h file */
-#include "onvifdeviceH.h" /* liuyi replace with soapcpp2-generated *H.h file */
+#include "onvifdeviceH.h"
 
 #ifdef __cplusplus
 extern "C" {

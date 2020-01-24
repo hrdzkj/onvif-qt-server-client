@@ -5,7 +5,6 @@
 #include "soap/onvifdeviceDeviceBindingProxy.h"
 #include "soap/onvifdevice.nsmap"
 
-
 Device::Device()
 {
 
@@ -23,8 +22,8 @@ void Device::getDeviceInformation(QString devServiceURL) {
 
     DeviceBindingProxy d;
 
-    _devicews__GetDeviceInformation in;
-    _devicews__GetDeviceInformationResponse out;
+    _tds__GetDeviceInformation in;
+    _tds__GetDeviceInformationResponse out;
 
     if (d.GetDeviceInformation(devServiceURL.toStdString().data(), NULL, &in, out) == SOAP_OK) {
         //ok
@@ -48,8 +47,8 @@ void Device::getUses(QString devServiceURL) {
 
     DeviceBindingProxy d;
 
-    _devicews__GetUsers in;
-    _devicews__GetUsersResponse out;
+    _tds__GetUsers in;
+    _tds__GetUsersResponse out;
 
 
     if (d.GetUsers(devServiceURL.toStdString().data(), NULL, &in, out) == SOAP_OK) {
