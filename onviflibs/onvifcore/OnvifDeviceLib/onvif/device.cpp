@@ -26,7 +26,7 @@ void Device::getDeviceInformation(QString devServiceURL) {
     _tds__GetDeviceInformationResponse out;
 
     if (d.GetDeviceInformation(devServiceURL.toStdString().data(), NULL, &in, out) == SOAP_OK) {
-        //ok
+        //ok    
         qDebug() << (char*)out.soap->data;
         qDebug() << out.FirmwareVersion.data();
         qDebug() << out.SerialNumber.data();
@@ -41,6 +41,32 @@ void Device::getDeviceInformation(QString devServiceURL) {
     return ;
 }
 
+
+void Device::getServices(QString devServiceURL) {
+    qDebug() << "device manager service test: getServices";
+    DeviceBindingProxy d;
+     _tds__GetServices in;
+     _tds__GetServicesResponse out;
+
+    if (d.GetServices(devServiceURL.toStdString().data(), NULL, &in, out) == SOAP_OK) {
+        //ok
+        for(int i=0; i<out.Service.size(); i++){
+            if(strcmp(out.Service[i]->Namespace.data(), "http://www.onvif.org/ver20/media/wsdl") == 0)
+            {
+                printf("media_addr[%d] %s\n", i, out.Service[i]->XAddr.data());
+            }
+            if(strcmp(out.Service[i]->Namespace.data(), "http://www.onvif.org/ver10/media/wsdl") == 0)
+            {
+                printf(" media_addr->XAddr[%d] %s\n", i, out.Service[i]->XAddr.data());
+            }
+         }
+    } else {
+        //error
+        d.soap_print_fault(stderr);
+        //fflush(stderr);
+    }
+    return ;
+}
 void Device::getUses(QString devServiceURL) {
 
     qDebug() << "device manager service test: getUses";

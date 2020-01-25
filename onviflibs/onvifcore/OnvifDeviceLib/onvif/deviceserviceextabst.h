@@ -271,8 +271,6 @@ public:
     /// Web service operation 'DeleteStorageConfiguration' (returns error code or SOAP_OK)
     virtual	int DeleteStorageConfiguration(_tds__DeleteStorageConfiguration *devicews__DeleteStorageConfiguration, _tds__DeleteStorageConfigurationResponse &devicews__DeleteStorageConfigurationResponse)  = 0;
 
-
-
     /// Web service operation 'GetGeoLocation' (returns error code or SOAP_OK)
     virtual	int GetGeoLocation(_tds__GetGeoLocation *tds__GetGeoLocation, _tds__GetGeoLocationResponse &tds__GetGeoLocationResponse) =0;
 
