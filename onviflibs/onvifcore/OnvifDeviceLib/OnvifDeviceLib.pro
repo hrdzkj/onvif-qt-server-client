@@ -15,8 +15,8 @@ TEMPLATE = app
 CONFIG += console
 
 DEFINES += MYDLL_LIBRARY
-DEFINED += WITH_DOM
-DEFINED += WITH_OPENSSL
+DEFINES += WITH_DOM
+DEFINES += WITH_OPENSSL
 
 LIBS += -L"C:\openssl-1.0.2u\lib" -llibeay32
 LIBS += -L"C:\openssl-1.0.2u\lib" -lssleay32
@@ -40,10 +40,10 @@ SOURCES += \
     soap/dom.cpp \
     soap/onvifdeviceC.cpp \
     soap/plugin/wsseapi.cpp \
-    soap/plugin/mecevp.cpp \
     soap/plugin/smdevp.cpp \
     soap/plugin/threads.cpp \
-    soap/plugin/wsaapi.cpp
+    soap/plugin/wsaapi.cpp \
+    soap/plugin/mecevp.c
 
 
 HEADERS  += \
