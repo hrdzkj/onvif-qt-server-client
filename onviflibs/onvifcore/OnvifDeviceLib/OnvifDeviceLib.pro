@@ -6,7 +6,8 @@
 
 QT       += core
 
-DESTDIR = ../../../OnvifDist
+#DESTDIR = ../../../OnvifDist
+DESTDIR = ../../../libexe
 
 TARGET = OnvifDeviceLib
 
@@ -40,10 +41,10 @@ SOURCES += \
     soap/dom.cpp \
     soap/onvifdeviceC.cpp \
     soap/plugin/wsseapi.cpp \
-    soap/plugin/smdevp.cpp \
-    soap/plugin/threads.cpp \
+    soap/plugin/mecevp.c \
+    soap/plugin/smdevp.c \
     soap/plugin/wsaapi.cpp \
-    soap/plugin/mecevp.c
+    soap/plugin/threads.c
 
 
 HEADERS  += \

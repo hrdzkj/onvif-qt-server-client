@@ -876,3 +876,34 @@ int DeviceBindingService::DeleteStorageConfiguration(_tds__DeleteStorageConfigur
         return SOAP_ERR;
     }
 }
+
+
+int  DeviceBindingService::GetGeoLocation(_tds__GetGeoLocation *tds__GetGeoLocation, _tds__GetGeoLocationResponse &tds__GetGeoLocationResponse){
+    if(DeviceService::dse != NULL){
+        return 0 ;
+    } else {
+        qDebug() << "DeviceService::dse is NULL\n";
+        return SOAP_ERR;
+    }
+
+}
+
+int DeviceBindingService::SetGeoLocation(_tds__SetGeoLocation *tds__SetGeoLocation, _tds__SetGeoLocationResponse &tds__SetGeoLocationResponse){
+    if(DeviceService::dse != NULL){
+        return 0 ;
+    } else {
+        qDebug() << "DeviceService::dse is NULL\n";
+        return SOAP_ERR;
+    }
+}
+
+
+int DeviceBindingService::DeleteGeoLocation(_tds__DeleteGeoLocation *tds__DeleteGeoLocation, _tds__DeleteGeoLocationResponse &tds__DeleteGeoLocationResponse){
+    if(DeviceService::dse != NULL){
+        return 0 ;
+    } else {
+        qDebug() << "DeviceService::dse is NULL\n";
+        return SOAP_ERR;
+    }
+
+}
