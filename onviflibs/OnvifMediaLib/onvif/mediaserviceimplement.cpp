@@ -7,9 +7,9 @@
 MediaServiceExtAbst * MediaService::serviceExt = NULL;
 
 /// Web service operation 'GetServiceCapabilities' (returns error code or SOAP_OK)
-int MediaBindingService::GetServiceCapabilities(_mediaws__GetServiceCapabilities *mediaws__GetServiceCapabilities, _mediaws__GetServiceCapabilitiesResponse &mediaws__GetServiceCapabilitiesResponse) {
+int MediaBindingService::GetServiceCapabilities(_trt__GetServiceCapabilities *trt__GetServiceCapabilities, _trt__GetServiceCapabilitiesResponse &trt__GetServiceCapabilitiesResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetServiceCapabilities(mediaws__GetServiceCapabilities, mediaws__GetServiceCapabilitiesResponse);
+        return MediaService::serviceExt->GetServiceCapabilities(trt__GetServiceCapabilities, trt__GetServiceCapabilitiesResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -17,9 +17,9 @@ int MediaBindingService::GetServiceCapabilities(_mediaws__GetServiceCapabilities
 }
 
 /// Web service operation 'GetVideoSources' (returns error code or SOAP_OK)
-int MediaBindingService::GetVideoSources(_mediaws__GetVideoSources *mediaws__GetVideoSources, _mediaws__GetVideoSourcesResponse &mediaws__GetVideoSourcesResponse) {
+int MediaBindingService::GetVideoSources(_trt__GetVideoSources *trt__GetVideoSources, _trt__GetVideoSourcesResponse &trt__GetVideoSourcesResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetVideoSources( mediaws__GetVideoSources, mediaws__GetVideoSourcesResponse);
+        return MediaService::serviceExt->GetVideoSources( trt__GetVideoSources, trt__GetVideoSourcesResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -27,9 +27,9 @@ int MediaBindingService::GetVideoSources(_mediaws__GetVideoSources *mediaws__Get
 }
 
 /// Web service operation 'GetAudioSources' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioSources(_mediaws__GetAudioSources *mediaws__GetAudioSources, _mediaws__GetAudioSourcesResponse &mediaws__GetAudioSourcesResponse) {
+int MediaBindingService::GetAudioSources(_trt__GetAudioSources *trt__GetAudioSources, _trt__GetAudioSourcesResponse &trt__GetAudioSourcesResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioSources( mediaws__GetAudioSources,  mediaws__GetAudioSourcesResponse);
+        return MediaService::serviceExt->GetAudioSources( trt__GetAudioSources,  trt__GetAudioSourcesResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -37,9 +37,9 @@ int MediaBindingService::GetAudioSources(_mediaws__GetAudioSources *mediaws__Get
 }
 
 /// Web service operation 'GetAudioOutputs' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioOutputs(_mediaws__GetAudioOutputs *mediaws__GetAudioOutputs, _mediaws__GetAudioOutputsResponse &mediaws__GetAudioOutputsResponse) {
+int MediaBindingService::GetAudioOutputs(_trt__GetAudioOutputs *trt__GetAudioOutputs, _trt__GetAudioOutputsResponse &trt__GetAudioOutputsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioOutputs( mediaws__GetAudioOutputs,  mediaws__GetAudioOutputsResponse);
+        return MediaService::serviceExt->GetAudioOutputs( trt__GetAudioOutputs,  trt__GetAudioOutputsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -47,9 +47,9 @@ int MediaBindingService::GetAudioOutputs(_mediaws__GetAudioOutputs *mediaws__Get
 }
 
 /// Web service operation 'CreateProfile' (returns error code or SOAP_OK)
-int MediaBindingService::CreateProfile(_mediaws__CreateProfile *mediaws__CreateProfile, _mediaws__CreateProfileResponse &mediaws__CreateProfileResponse) {
+int MediaBindingService::CreateProfile(_trt__CreateProfile *trt__CreateProfile, _trt__CreateProfileResponse &trt__CreateProfileResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->CreateProfile( mediaws__CreateProfile,  mediaws__CreateProfileResponse);
+        return MediaService::serviceExt->CreateProfile( trt__CreateProfile,  trt__CreateProfileResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -57,9 +57,9 @@ int MediaBindingService::CreateProfile(_mediaws__CreateProfile *mediaws__CreateP
 }
 
 /// Web service operation 'GetProfile' (returns error code or SOAP_OK)
-int MediaBindingService::GetProfile(_mediaws__GetProfile *mediaws__GetProfile, _mediaws__GetProfileResponse &mediaws__GetProfileResponse) {
+int MediaBindingService::GetProfile(_trt__GetProfile *trt__GetProfile, _trt__GetProfileResponse &trt__GetProfileResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetProfile( mediaws__GetProfile,  mediaws__GetProfileResponse);
+        return MediaService::serviceExt->GetProfile( trt__GetProfile,  trt__GetProfileResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -67,9 +67,9 @@ int MediaBindingService::GetProfile(_mediaws__GetProfile *mediaws__GetProfile, _
 }
 
 /// Web service operation 'GetProfiles' (returns error code or SOAP_OK)
-int MediaBindingService::GetProfiles(_mediaws__GetProfiles *mediaws__GetProfiles, _mediaws__GetProfilesResponse &mediaws__GetProfilesResponse) {
+int MediaBindingService::GetProfiles(_trt__GetProfiles *trt__GetProfiles, _trt__GetProfilesResponse &trt__GetProfilesResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetProfiles( mediaws__GetProfiles,  mediaws__GetProfilesResponse) ;
+        return MediaService::serviceExt->GetProfiles( trt__GetProfiles,  trt__GetProfilesResponse) ;
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -77,9 +77,9 @@ int MediaBindingService::GetProfiles(_mediaws__GetProfiles *mediaws__GetProfiles
 }
 
 /// Web service operation 'AddVideoEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::AddVideoEncoderConfiguration(_mediaws__AddVideoEncoderConfiguration *mediaws__AddVideoEncoderConfiguration, _mediaws__AddVideoEncoderConfigurationResponse &mediaws__AddVideoEncoderConfigurationResponse) {
+int MediaBindingService::AddVideoEncoderConfiguration(_trt__AddVideoEncoderConfiguration *trt__AddVideoEncoderConfiguration, _trt__AddVideoEncoderConfigurationResponse &trt__AddVideoEncoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->AddVideoEncoderConfiguration( mediaws__AddVideoEncoderConfiguration,  mediaws__AddVideoEncoderConfigurationResponse);
+        return MediaService::serviceExt->AddVideoEncoderConfiguration( trt__AddVideoEncoderConfiguration,  trt__AddVideoEncoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -87,9 +87,9 @@ int MediaBindingService::AddVideoEncoderConfiguration(_mediaws__AddVideoEncoderC
 }
 
 /// Web service operation 'AddVideoSourceConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::AddVideoSourceConfiguration(_mediaws__AddVideoSourceConfiguration *mediaws__AddVideoSourceConfiguration, _mediaws__AddVideoSourceConfigurationResponse &mediaws__AddVideoSourceConfigurationResponse) {
+int MediaBindingService::AddVideoSourceConfiguration(_trt__AddVideoSourceConfiguration *trt__AddVideoSourceConfiguration, _trt__AddVideoSourceConfigurationResponse &trt__AddVideoSourceConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->AddVideoSourceConfiguration( mediaws__AddVideoSourceConfiguration, mediaws__AddVideoSourceConfigurationResponse);
+        return MediaService::serviceExt->AddVideoSourceConfiguration( trt__AddVideoSourceConfiguration, trt__AddVideoSourceConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -97,9 +97,9 @@ int MediaBindingService::AddVideoSourceConfiguration(_mediaws__AddVideoSourceCon
 }
 
 /// Web service operation 'AddAudioEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::AddAudioEncoderConfiguration(_mediaws__AddAudioEncoderConfiguration *mediaws__AddAudioEncoderConfiguration, _mediaws__AddAudioEncoderConfigurationResponse &mediaws__AddAudioEncoderConfigurationResponse) {
+int MediaBindingService::AddAudioEncoderConfiguration(_trt__AddAudioEncoderConfiguration *trt__AddAudioEncoderConfiguration, _trt__AddAudioEncoderConfigurationResponse &trt__AddAudioEncoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->AddAudioEncoderConfiguration( mediaws__AddAudioEncoderConfiguration, mediaws__AddAudioEncoderConfigurationResponse);
+        return MediaService::serviceExt->AddAudioEncoderConfiguration( trt__AddAudioEncoderConfiguration, trt__AddAudioEncoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -107,9 +107,9 @@ int MediaBindingService::AddAudioEncoderConfiguration(_mediaws__AddAudioEncoderC
 }
 
 /// Web service operation 'AddAudioSourceConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::AddAudioSourceConfiguration(_mediaws__AddAudioSourceConfiguration *mediaws__AddAudioSourceConfiguration, _mediaws__AddAudioSourceConfigurationResponse &mediaws__AddAudioSourceConfigurationResponse) {
+int MediaBindingService::AddAudioSourceConfiguration(_trt__AddAudioSourceConfiguration *trt__AddAudioSourceConfiguration, _trt__AddAudioSourceConfigurationResponse &trt__AddAudioSourceConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->AddAudioSourceConfiguration( mediaws__AddAudioSourceConfiguration, mediaws__AddAudioSourceConfigurationResponse);
+        return MediaService::serviceExt->AddAudioSourceConfiguration( trt__AddAudioSourceConfiguration, trt__AddAudioSourceConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -117,9 +117,9 @@ int MediaBindingService::AddAudioSourceConfiguration(_mediaws__AddAudioSourceCon
 }
 
 /// Web service operation 'AddPTZConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::AddPTZConfiguration(_mediaws__AddPTZConfiguration *mediaws__AddPTZConfiguration, _mediaws__AddPTZConfigurationResponse &mediaws__AddPTZConfigurationResponse) {
+int MediaBindingService::AddPTZConfiguration(_trt__AddPTZConfiguration *trt__AddPTZConfiguration, _trt__AddPTZConfigurationResponse &trt__AddPTZConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->AddPTZConfiguration( mediaws__AddPTZConfiguration, mediaws__AddPTZConfigurationResponse);
+        return MediaService::serviceExt->AddPTZConfiguration( trt__AddPTZConfiguration, trt__AddPTZConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -127,9 +127,9 @@ int MediaBindingService::AddPTZConfiguration(_mediaws__AddPTZConfiguration *medi
 }
 
 /// Web service operation 'AddVideoAnalyticsConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::AddVideoAnalyticsConfiguration(_mediaws__AddVideoAnalyticsConfiguration *mediaws__AddVideoAnalyticsConfiguration, _mediaws__AddVideoAnalyticsConfigurationResponse &mediaws__AddVideoAnalyticsConfigurationResponse) {
+int MediaBindingService::AddVideoAnalyticsConfiguration(_trt__AddVideoAnalyticsConfiguration *trt__AddVideoAnalyticsConfiguration, _trt__AddVideoAnalyticsConfigurationResponse &trt__AddVideoAnalyticsConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->AddVideoAnalyticsConfiguration( mediaws__AddVideoAnalyticsConfiguration, mediaws__AddVideoAnalyticsConfigurationResponse);
+        return MediaService::serviceExt->AddVideoAnalyticsConfiguration( trt__AddVideoAnalyticsConfiguration, trt__AddVideoAnalyticsConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -137,9 +137,9 @@ int MediaBindingService::AddVideoAnalyticsConfiguration(_mediaws__AddVideoAnalyt
 }
 
 /// Web service operation 'AddMetadataConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::AddMetadataConfiguration(_mediaws__AddMetadataConfiguration *mediaws__AddMetadataConfiguration, _mediaws__AddMetadataConfigurationResponse &mediaws__AddMetadataConfigurationResponse) {
+int MediaBindingService::AddMetadataConfiguration(_trt__AddMetadataConfiguration *trt__AddMetadataConfiguration, _trt__AddMetadataConfigurationResponse &trt__AddMetadataConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->AddMetadataConfiguration( mediaws__AddMetadataConfiguration, mediaws__AddMetadataConfigurationResponse);
+        return MediaService::serviceExt->AddMetadataConfiguration( trt__AddMetadataConfiguration, trt__AddMetadataConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -147,9 +147,9 @@ int MediaBindingService::AddMetadataConfiguration(_mediaws__AddMetadataConfigura
 }
 
 /// Web service operation 'AddAudioOutputConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::AddAudioOutputConfiguration(_mediaws__AddAudioOutputConfiguration *mediaws__AddAudioOutputConfiguration, _mediaws__AddAudioOutputConfigurationResponse &mediaws__AddAudioOutputConfigurationResponse) {
+int MediaBindingService::AddAudioOutputConfiguration(_trt__AddAudioOutputConfiguration *trt__AddAudioOutputConfiguration, _trt__AddAudioOutputConfigurationResponse &trt__AddAudioOutputConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->AddAudioOutputConfiguration( mediaws__AddAudioOutputConfiguration, mediaws__AddAudioOutputConfigurationResponse);
+        return MediaService::serviceExt->AddAudioOutputConfiguration( trt__AddAudioOutputConfiguration, trt__AddAudioOutputConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -157,9 +157,9 @@ int MediaBindingService::AddAudioOutputConfiguration(_mediaws__AddAudioOutputCon
 }
 
 /// Web service operation 'AddAudioDecoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::AddAudioDecoderConfiguration(_mediaws__AddAudioDecoderConfiguration *mediaws__AddAudioDecoderConfiguration, _mediaws__AddAudioDecoderConfigurationResponse &mediaws__AddAudioDecoderConfigurationResponse) {
+int MediaBindingService::AddAudioDecoderConfiguration(_trt__AddAudioDecoderConfiguration *trt__AddAudioDecoderConfiguration, _trt__AddAudioDecoderConfigurationResponse &trt__AddAudioDecoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->AddAudioDecoderConfiguration( mediaws__AddAudioDecoderConfiguration, mediaws__AddAudioDecoderConfigurationResponse);
+        return MediaService::serviceExt->AddAudioDecoderConfiguration( trt__AddAudioDecoderConfiguration, trt__AddAudioDecoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -167,9 +167,9 @@ int MediaBindingService::AddAudioDecoderConfiguration(_mediaws__AddAudioDecoderC
 }
 
 /// Web service operation 'RemoveVideoEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::RemoveVideoEncoderConfiguration(_mediaws__RemoveVideoEncoderConfiguration *mediaws__RemoveVideoEncoderConfiguration, _mediaws__RemoveVideoEncoderConfigurationResponse &mediaws__RemoveVideoEncoderConfigurationResponse) {
+int MediaBindingService::RemoveVideoEncoderConfiguration(_trt__RemoveVideoEncoderConfiguration *trt__RemoveVideoEncoderConfiguration, _trt__RemoveVideoEncoderConfigurationResponse &trt__RemoveVideoEncoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->RemoveVideoEncoderConfiguration( mediaws__RemoveVideoEncoderConfiguration,  mediaws__RemoveVideoEncoderConfigurationResponse);
+        return MediaService::serviceExt->RemoveVideoEncoderConfiguration( trt__RemoveVideoEncoderConfiguration,  trt__RemoveVideoEncoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -177,9 +177,9 @@ int MediaBindingService::RemoveVideoEncoderConfiguration(_mediaws__RemoveVideoEn
 }
 
 /// Web service operation 'RemoveVideoSourceConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::RemoveVideoSourceConfiguration(_mediaws__RemoveVideoSourceConfiguration *mediaws__RemoveVideoSourceConfiguration, _mediaws__RemoveVideoSourceConfigurationResponse &mediaws__RemoveVideoSourceConfigurationResponse) {
+int MediaBindingService::RemoveVideoSourceConfiguration(_trt__RemoveVideoSourceConfiguration *trt__RemoveVideoSourceConfiguration, _trt__RemoveVideoSourceConfigurationResponse &trt__RemoveVideoSourceConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->RemoveVideoSourceConfiguration( mediaws__RemoveVideoSourceConfiguration,  mediaws__RemoveVideoSourceConfigurationResponse);
+        return MediaService::serviceExt->RemoveVideoSourceConfiguration( trt__RemoveVideoSourceConfiguration,  trt__RemoveVideoSourceConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -187,9 +187,9 @@ int MediaBindingService::RemoveVideoSourceConfiguration(_mediaws__RemoveVideoSou
 }
 
 /// Web service operation 'RemoveAudioEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::RemoveAudioEncoderConfiguration(_mediaws__RemoveAudioEncoderConfiguration *mediaws__RemoveAudioEncoderConfiguration, _mediaws__RemoveAudioEncoderConfigurationResponse &mediaws__RemoveAudioEncoderConfigurationResponse) {
+int MediaBindingService::RemoveAudioEncoderConfiguration(_trt__RemoveAudioEncoderConfiguration *trt__RemoveAudioEncoderConfiguration, _trt__RemoveAudioEncoderConfigurationResponse &trt__RemoveAudioEncoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->RemoveAudioEncoderConfiguration( mediaws__RemoveAudioEncoderConfiguration, mediaws__RemoveAudioEncoderConfigurationResponse);
+        return MediaService::serviceExt->RemoveAudioEncoderConfiguration( trt__RemoveAudioEncoderConfiguration, trt__RemoveAudioEncoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -197,9 +197,9 @@ int MediaBindingService::RemoveAudioEncoderConfiguration(_mediaws__RemoveAudioEn
 }
 
 /// Web service operation 'RemoveAudioSourceConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::RemoveAudioSourceConfiguration(_mediaws__RemoveAudioSourceConfiguration *mediaws__RemoveAudioSourceConfiguration, _mediaws__RemoveAudioSourceConfigurationResponse &mediaws__RemoveAudioSourceConfigurationResponse) {
+int MediaBindingService::RemoveAudioSourceConfiguration(_trt__RemoveAudioSourceConfiguration *trt__RemoveAudioSourceConfiguration, _trt__RemoveAudioSourceConfigurationResponse &trt__RemoveAudioSourceConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->RemoveAudioSourceConfiguration( mediaws__RemoveAudioSourceConfiguration, mediaws__RemoveAudioSourceConfigurationResponse);
+        return MediaService::serviceExt->RemoveAudioSourceConfiguration( trt__RemoveAudioSourceConfiguration, trt__RemoveAudioSourceConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -207,9 +207,9 @@ int MediaBindingService::RemoveAudioSourceConfiguration(_mediaws__RemoveAudioSou
 }
 
 /// Web service operation 'RemovePTZConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::RemovePTZConfiguration(_mediaws__RemovePTZConfiguration *mediaws__RemovePTZConfiguration, _mediaws__RemovePTZConfigurationResponse &mediaws__RemovePTZConfigurationResponse) {
+int MediaBindingService::RemovePTZConfiguration(_trt__RemovePTZConfiguration *trt__RemovePTZConfiguration, _trt__RemovePTZConfigurationResponse &trt__RemovePTZConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->RemovePTZConfiguration( mediaws__RemovePTZConfiguration, mediaws__RemovePTZConfigurationResponse);
+        return MediaService::serviceExt->RemovePTZConfiguration( trt__RemovePTZConfiguration, trt__RemovePTZConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -217,9 +217,9 @@ int MediaBindingService::RemovePTZConfiguration(_mediaws__RemovePTZConfiguration
 }
 
 /// Web service operation 'RemoveVideoAnalyticsConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::RemoveVideoAnalyticsConfiguration(_mediaws__RemoveVideoAnalyticsConfiguration *mediaws__RemoveVideoAnalyticsConfiguration, _mediaws__RemoveVideoAnalyticsConfigurationResponse &mediaws__RemoveVideoAnalyticsConfigurationResponse) {
+int MediaBindingService::RemoveVideoAnalyticsConfiguration(_trt__RemoveVideoAnalyticsConfiguration *trt__RemoveVideoAnalyticsConfiguration, _trt__RemoveVideoAnalyticsConfigurationResponse &trt__RemoveVideoAnalyticsConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->RemoveVideoAnalyticsConfiguration( mediaws__RemoveVideoAnalyticsConfiguration, mediaws__RemoveVideoAnalyticsConfigurationResponse);
+        return MediaService::serviceExt->RemoveVideoAnalyticsConfiguration( trt__RemoveVideoAnalyticsConfiguration, trt__RemoveVideoAnalyticsConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -227,9 +227,9 @@ int MediaBindingService::RemoveVideoAnalyticsConfiguration(_mediaws__RemoveVideo
 }
 
 /// Web service operation 'RemoveMetadataConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::RemoveMetadataConfiguration(_mediaws__RemoveMetadataConfiguration *mediaws__RemoveMetadataConfiguration, _mediaws__RemoveMetadataConfigurationResponse &mediaws__RemoveMetadataConfigurationResponse) {
+int MediaBindingService::RemoveMetadataConfiguration(_trt__RemoveMetadataConfiguration *trt__RemoveMetadataConfiguration, _trt__RemoveMetadataConfigurationResponse &trt__RemoveMetadataConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->RemoveMetadataConfiguration( mediaws__RemoveMetadataConfiguration, mediaws__RemoveMetadataConfigurationResponse);
+        return MediaService::serviceExt->RemoveMetadataConfiguration( trt__RemoveMetadataConfiguration, trt__RemoveMetadataConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -237,9 +237,9 @@ int MediaBindingService::RemoveMetadataConfiguration(_mediaws__RemoveMetadataCon
 }
 
 /// Web service operation 'RemoveAudioOutputConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::RemoveAudioOutputConfiguration(_mediaws__RemoveAudioOutputConfiguration *mediaws__RemoveAudioOutputConfiguration, _mediaws__RemoveAudioOutputConfigurationResponse &mediaws__RemoveAudioOutputConfigurationResponse) {
+int MediaBindingService::RemoveAudioOutputConfiguration(_trt__RemoveAudioOutputConfiguration *trt__RemoveAudioOutputConfiguration, _trt__RemoveAudioOutputConfigurationResponse &trt__RemoveAudioOutputConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->RemoveAudioOutputConfiguration(mediaws__RemoveAudioOutputConfiguration,  mediaws__RemoveAudioOutputConfigurationResponse);
+        return MediaService::serviceExt->RemoveAudioOutputConfiguration(trt__RemoveAudioOutputConfiguration,  trt__RemoveAudioOutputConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -247,9 +247,9 @@ int MediaBindingService::RemoveAudioOutputConfiguration(_mediaws__RemoveAudioOut
 }
 
 /// Web service operation 'RemoveAudioDecoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::RemoveAudioDecoderConfiguration(_mediaws__RemoveAudioDecoderConfiguration *mediaws__RemoveAudioDecoderConfiguration, _mediaws__RemoveAudioDecoderConfigurationResponse &mediaws__RemoveAudioDecoderConfigurationResponse) {
+int MediaBindingService::RemoveAudioDecoderConfiguration(_trt__RemoveAudioDecoderConfiguration *trt__RemoveAudioDecoderConfiguration, _trt__RemoveAudioDecoderConfigurationResponse &trt__RemoveAudioDecoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->RemoveAudioDecoderConfiguration( mediaws__RemoveAudioDecoderConfiguration, mediaws__RemoveAudioDecoderConfigurationResponse);
+        return MediaService::serviceExt->RemoveAudioDecoderConfiguration( trt__RemoveAudioDecoderConfiguration, trt__RemoveAudioDecoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -257,9 +257,9 @@ int MediaBindingService::RemoveAudioDecoderConfiguration(_mediaws__RemoveAudioDe
 }
 
 /// Web service operation 'DeleteProfile' (returns error code or SOAP_OK)
-int MediaBindingService::DeleteProfile(_mediaws__DeleteProfile *mediaws__DeleteProfile, _mediaws__DeleteProfileResponse &mediaws__DeleteProfileResponse) {
+int MediaBindingService::DeleteProfile(_trt__DeleteProfile *trt__DeleteProfile, _trt__DeleteProfileResponse &trt__DeleteProfileResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->DeleteProfile( mediaws__DeleteProfile, mediaws__DeleteProfileResponse);
+        return MediaService::serviceExt->DeleteProfile( trt__DeleteProfile, trt__DeleteProfileResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -267,9 +267,9 @@ int MediaBindingService::DeleteProfile(_mediaws__DeleteProfile *mediaws__DeleteP
 }
 
 /// Web service operation 'GetVideoSourceConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetVideoSourceConfigurations(_mediaws__GetVideoSourceConfigurations *mediaws__GetVideoSourceConfigurations, _mediaws__GetVideoSourceConfigurationsResponse &mediaws__GetVideoSourceConfigurationsResponse) {
+int MediaBindingService::GetVideoSourceConfigurations(_trt__GetVideoSourceConfigurations *trt__GetVideoSourceConfigurations, _trt__GetVideoSourceConfigurationsResponse &trt__GetVideoSourceConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetVideoSourceConfigurations( mediaws__GetVideoSourceConfigurations,  mediaws__GetVideoSourceConfigurationsResponse);
+        return MediaService::serviceExt->GetVideoSourceConfigurations( trt__GetVideoSourceConfigurations,  trt__GetVideoSourceConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -277,9 +277,9 @@ int MediaBindingService::GetVideoSourceConfigurations(_mediaws__GetVideoSourceCo
 }
 
 /// Web service operation 'GetVideoEncoderConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetVideoEncoderConfigurations(_mediaws__GetVideoEncoderConfigurations *mediaws__GetVideoEncoderConfigurations, _mediaws__GetVideoEncoderConfigurationsResponse &mediaws__GetVideoEncoderConfigurationsResponse) {
+int MediaBindingService::GetVideoEncoderConfigurations(_trt__GetVideoEncoderConfigurations *trt__GetVideoEncoderConfigurations, _trt__GetVideoEncoderConfigurationsResponse &trt__GetVideoEncoderConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetVideoEncoderConfigurations( mediaws__GetVideoEncoderConfigurations,  mediaws__GetVideoEncoderConfigurationsResponse);
+        return MediaService::serviceExt->GetVideoEncoderConfigurations( trt__GetVideoEncoderConfigurations,  trt__GetVideoEncoderConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -287,9 +287,9 @@ int MediaBindingService::GetVideoEncoderConfigurations(_mediaws__GetVideoEncoder
 }
 
 /// Web service operation 'GetAudioSourceConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioSourceConfigurations(_mediaws__GetAudioSourceConfigurations *mediaws__GetAudioSourceConfigurations, _mediaws__GetAudioSourceConfigurationsResponse &mediaws__GetAudioSourceConfigurationsResponse) {
+int MediaBindingService::GetAudioSourceConfigurations(_trt__GetAudioSourceConfigurations *trt__GetAudioSourceConfigurations, _trt__GetAudioSourceConfigurationsResponse &trt__GetAudioSourceConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioSourceConfigurations(mediaws__GetAudioSourceConfigurations,  mediaws__GetAudioSourceConfigurationsResponse);
+        return MediaService::serviceExt->GetAudioSourceConfigurations(trt__GetAudioSourceConfigurations,  trt__GetAudioSourceConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -297,9 +297,9 @@ int MediaBindingService::GetAudioSourceConfigurations(_mediaws__GetAudioSourceCo
 }
 
 /// Web service operation 'GetAudioEncoderConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioEncoderConfigurations(_mediaws__GetAudioEncoderConfigurations *mediaws__GetAudioEncoderConfigurations, _mediaws__GetAudioEncoderConfigurationsResponse &mediaws__GetAudioEncoderConfigurationsResponse) {
+int MediaBindingService::GetAudioEncoderConfigurations(_trt__GetAudioEncoderConfigurations *trt__GetAudioEncoderConfigurations, _trt__GetAudioEncoderConfigurationsResponse &trt__GetAudioEncoderConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioEncoderConfigurations( mediaws__GetAudioEncoderConfigurations,  mediaws__GetAudioEncoderConfigurationsResponse);
+        return MediaService::serviceExt->GetAudioEncoderConfigurations( trt__GetAudioEncoderConfigurations,  trt__GetAudioEncoderConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -307,9 +307,9 @@ int MediaBindingService::GetAudioEncoderConfigurations(_mediaws__GetAudioEncoder
 }
 
 /// Web service operation 'GetVideoAnalyticsConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetVideoAnalyticsConfigurations(_mediaws__GetVideoAnalyticsConfigurations *mediaws__GetVideoAnalyticsConfigurations, _mediaws__GetVideoAnalyticsConfigurationsResponse &mediaws__GetVideoAnalyticsConfigurationsResponse) {
+int MediaBindingService::GetVideoAnalyticsConfigurations(_trt__GetVideoAnalyticsConfigurations *trt__GetVideoAnalyticsConfigurations, _trt__GetVideoAnalyticsConfigurationsResponse &trt__GetVideoAnalyticsConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetVideoAnalyticsConfigurations( mediaws__GetVideoAnalyticsConfigurations,  mediaws__GetVideoAnalyticsConfigurationsResponse);
+        return MediaService::serviceExt->GetVideoAnalyticsConfigurations( trt__GetVideoAnalyticsConfigurations,  trt__GetVideoAnalyticsConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -317,9 +317,9 @@ int MediaBindingService::GetVideoAnalyticsConfigurations(_mediaws__GetVideoAnaly
 }
 
 /// Web service operation 'GetMetadataConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetMetadataConfigurations(_mediaws__GetMetadataConfigurations *mediaws__GetMetadataConfigurations, _mediaws__GetMetadataConfigurationsResponse &mediaws__GetMetadataConfigurationsResponse) {
+int MediaBindingService::GetMetadataConfigurations(_trt__GetMetadataConfigurations *trt__GetMetadataConfigurations, _trt__GetMetadataConfigurationsResponse &trt__GetMetadataConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetMetadataConfigurations( mediaws__GetMetadataConfigurations,  mediaws__GetMetadataConfigurationsResponse);
+        return MediaService::serviceExt->GetMetadataConfigurations( trt__GetMetadataConfigurations,  trt__GetMetadataConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -327,9 +327,9 @@ int MediaBindingService::GetMetadataConfigurations(_mediaws__GetMetadataConfigur
 }
 
 /// Web service operation 'GetAudioOutputConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioOutputConfigurations(_mediaws__GetAudioOutputConfigurations *mediaws__GetAudioOutputConfigurations, _mediaws__GetAudioOutputConfigurationsResponse &mediaws__GetAudioOutputConfigurationsResponse) {
+int MediaBindingService::GetAudioOutputConfigurations(_trt__GetAudioOutputConfigurations *trt__GetAudioOutputConfigurations, _trt__GetAudioOutputConfigurationsResponse &trt__GetAudioOutputConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioOutputConfigurations( mediaws__GetAudioOutputConfigurations,  mediaws__GetAudioOutputConfigurationsResponse);
+        return MediaService::serviceExt->GetAudioOutputConfigurations( trt__GetAudioOutputConfigurations,  trt__GetAudioOutputConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -337,9 +337,9 @@ int MediaBindingService::GetAudioOutputConfigurations(_mediaws__GetAudioOutputCo
 }
 
 /// Web service operation 'GetAudioDecoderConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioDecoderConfigurations(_mediaws__GetAudioDecoderConfigurations *mediaws__GetAudioDecoderConfigurations, _mediaws__GetAudioDecoderConfigurationsResponse &mediaws__GetAudioDecoderConfigurationsResponse) {
+int MediaBindingService::GetAudioDecoderConfigurations(_trt__GetAudioDecoderConfigurations *trt__GetAudioDecoderConfigurations, _trt__GetAudioDecoderConfigurationsResponse &trt__GetAudioDecoderConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioDecoderConfigurations( mediaws__GetAudioDecoderConfigurations,  mediaws__GetAudioDecoderConfigurationsResponse);
+        return MediaService::serviceExt->GetAudioDecoderConfigurations( trt__GetAudioDecoderConfigurations,  trt__GetAudioDecoderConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -347,9 +347,9 @@ int MediaBindingService::GetAudioDecoderConfigurations(_mediaws__GetAudioDecoder
 }
 
 /// Web service operation 'GetVideoSourceConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::GetVideoSourceConfiguration(_mediaws__GetVideoSourceConfiguration *mediaws__GetVideoSourceConfiguration, _mediaws__GetVideoSourceConfigurationResponse &mediaws__GetVideoSourceConfigurationResponse) {
+int MediaBindingService::GetVideoSourceConfiguration(_trt__GetVideoSourceConfiguration *trt__GetVideoSourceConfiguration, _trt__GetVideoSourceConfigurationResponse &trt__GetVideoSourceConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetVideoSourceConfiguration( mediaws__GetVideoSourceConfiguration,  mediaws__GetVideoSourceConfigurationResponse);
+        return MediaService::serviceExt->GetVideoSourceConfiguration( trt__GetVideoSourceConfiguration,  trt__GetVideoSourceConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -357,9 +357,9 @@ int MediaBindingService::GetVideoSourceConfiguration(_mediaws__GetVideoSourceCon
 }
 
 /// Web service operation 'GetVideoEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::GetVideoEncoderConfiguration(_mediaws__GetVideoEncoderConfiguration *mediaws__GetVideoEncoderConfiguration, _mediaws__GetVideoEncoderConfigurationResponse &mediaws__GetVideoEncoderConfigurationResponse) {
+int MediaBindingService::GetVideoEncoderConfiguration(_trt__GetVideoEncoderConfiguration *trt__GetVideoEncoderConfiguration, _trt__GetVideoEncoderConfigurationResponse &trt__GetVideoEncoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetVideoEncoderConfiguration( mediaws__GetVideoEncoderConfiguration,  mediaws__GetVideoEncoderConfigurationResponse);
+        return MediaService::serviceExt->GetVideoEncoderConfiguration( trt__GetVideoEncoderConfiguration,  trt__GetVideoEncoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -367,9 +367,9 @@ int MediaBindingService::GetVideoEncoderConfiguration(_mediaws__GetVideoEncoderC
 }
 
 /// Web service operation 'GetAudioSourceConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioSourceConfiguration(_mediaws__GetAudioSourceConfiguration *mediaws__GetAudioSourceConfiguration, _mediaws__GetAudioSourceConfigurationResponse &mediaws__GetAudioSourceConfigurationResponse) {
+int MediaBindingService::GetAudioSourceConfiguration(_trt__GetAudioSourceConfiguration *trt__GetAudioSourceConfiguration, _trt__GetAudioSourceConfigurationResponse &trt__GetAudioSourceConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioSourceConfiguration( mediaws__GetAudioSourceConfiguration,  mediaws__GetAudioSourceConfigurationResponse);
+        return MediaService::serviceExt->GetAudioSourceConfiguration( trt__GetAudioSourceConfiguration,  trt__GetAudioSourceConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -377,9 +377,9 @@ int MediaBindingService::GetAudioSourceConfiguration(_mediaws__GetAudioSourceCon
 }
 
 /// Web service operation 'GetAudioEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioEncoderConfiguration(_mediaws__GetAudioEncoderConfiguration *mediaws__GetAudioEncoderConfiguration, _mediaws__GetAudioEncoderConfigurationResponse &mediaws__GetAudioEncoderConfigurationResponse) {
+int MediaBindingService::GetAudioEncoderConfiguration(_trt__GetAudioEncoderConfiguration *trt__GetAudioEncoderConfiguration, _trt__GetAudioEncoderConfigurationResponse &trt__GetAudioEncoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioEncoderConfiguration( mediaws__GetAudioEncoderConfiguration, mediaws__GetAudioEncoderConfigurationResponse);
+        return MediaService::serviceExt->GetAudioEncoderConfiguration( trt__GetAudioEncoderConfiguration, trt__GetAudioEncoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -387,9 +387,9 @@ int MediaBindingService::GetAudioEncoderConfiguration(_mediaws__GetAudioEncoderC
 }
 
 /// Web service operation 'GetVideoAnalyticsConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::GetVideoAnalyticsConfiguration(_mediaws__GetVideoAnalyticsConfiguration *mediaws__GetVideoAnalyticsConfiguration, _mediaws__GetVideoAnalyticsConfigurationResponse &mediaws__GetVideoAnalyticsConfigurationResponse) {
+int MediaBindingService::GetVideoAnalyticsConfiguration(_trt__GetVideoAnalyticsConfiguration *trt__GetVideoAnalyticsConfiguration, _trt__GetVideoAnalyticsConfigurationResponse &trt__GetVideoAnalyticsConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetVideoAnalyticsConfiguration( mediaws__GetVideoAnalyticsConfiguration,  mediaws__GetVideoAnalyticsConfigurationResponse);
+        return MediaService::serviceExt->GetVideoAnalyticsConfiguration( trt__GetVideoAnalyticsConfiguration,  trt__GetVideoAnalyticsConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -397,9 +397,9 @@ int MediaBindingService::GetVideoAnalyticsConfiguration(_mediaws__GetVideoAnalyt
 }
 
 /// Web service operation 'GetMetadataConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::GetMetadataConfiguration(_mediaws__GetMetadataConfiguration *mediaws__GetMetadataConfiguration, _mediaws__GetMetadataConfigurationResponse &mediaws__GetMetadataConfigurationResponse) {
+int MediaBindingService::GetMetadataConfiguration(_trt__GetMetadataConfiguration *trt__GetMetadataConfiguration, _trt__GetMetadataConfigurationResponse &trt__GetMetadataConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetMetadataConfiguration( mediaws__GetMetadataConfiguration,  mediaws__GetMetadataConfigurationResponse);
+        return MediaService::serviceExt->GetMetadataConfiguration( trt__GetMetadataConfiguration,  trt__GetMetadataConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -407,9 +407,9 @@ int MediaBindingService::GetMetadataConfiguration(_mediaws__GetMetadataConfigura
 }
 
 /// Web service operation 'GetAudioOutputConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioOutputConfiguration(_mediaws__GetAudioOutputConfiguration *mediaws__GetAudioOutputConfiguration, _mediaws__GetAudioOutputConfigurationResponse &mediaws__GetAudioOutputConfigurationResponse) {
+int MediaBindingService::GetAudioOutputConfiguration(_trt__GetAudioOutputConfiguration *trt__GetAudioOutputConfiguration, _trt__GetAudioOutputConfigurationResponse &trt__GetAudioOutputConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioOutputConfiguration( mediaws__GetAudioOutputConfiguration,  mediaws__GetAudioOutputConfigurationResponse);
+        return MediaService::serviceExt->GetAudioOutputConfiguration( trt__GetAudioOutputConfiguration,  trt__GetAudioOutputConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -417,9 +417,9 @@ int MediaBindingService::GetAudioOutputConfiguration(_mediaws__GetAudioOutputCon
 }
 
 /// Web service operation 'GetAudioDecoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioDecoderConfiguration(_mediaws__GetAudioDecoderConfiguration *mediaws__GetAudioDecoderConfiguration, _mediaws__GetAudioDecoderConfigurationResponse &mediaws__GetAudioDecoderConfigurationResponse) {
+int MediaBindingService::GetAudioDecoderConfiguration(_trt__GetAudioDecoderConfiguration *trt__GetAudioDecoderConfiguration, _trt__GetAudioDecoderConfigurationResponse &trt__GetAudioDecoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioDecoderConfiguration( mediaws__GetAudioDecoderConfiguration,  mediaws__GetAudioDecoderConfigurationResponse);
+        return MediaService::serviceExt->GetAudioDecoderConfiguration( trt__GetAudioDecoderConfiguration,  trt__GetAudioDecoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -427,9 +427,9 @@ int MediaBindingService::GetAudioDecoderConfiguration(_mediaws__GetAudioDecoderC
 }
 
 /// Web service operation 'GetCompatibleVideoEncoderConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetCompatibleVideoEncoderConfigurations(_mediaws__GetCompatibleVideoEncoderConfigurations *mediaws__GetCompatibleVideoEncoderConfigurations, _mediaws__GetCompatibleVideoEncoderConfigurationsResponse &mediaws__GetCompatibleVideoEncoderConfigurationsResponse) {
+int MediaBindingService::GetCompatibleVideoEncoderConfigurations(_trt__GetCompatibleVideoEncoderConfigurations *trt__GetCompatibleVideoEncoderConfigurations, _trt__GetCompatibleVideoEncoderConfigurationsResponse &trt__GetCompatibleVideoEncoderConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetCompatibleVideoEncoderConfigurations( mediaws__GetCompatibleVideoEncoderConfigurations,  mediaws__GetCompatibleVideoEncoderConfigurationsResponse);
+        return MediaService::serviceExt->GetCompatibleVideoEncoderConfigurations( trt__GetCompatibleVideoEncoderConfigurations,  trt__GetCompatibleVideoEncoderConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -437,9 +437,9 @@ int MediaBindingService::GetCompatibleVideoEncoderConfigurations(_mediaws__GetCo
 }
 
 /// Web service operation 'GetCompatibleVideoSourceConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetCompatibleVideoSourceConfigurations(_mediaws__GetCompatibleVideoSourceConfigurations *mediaws__GetCompatibleVideoSourceConfigurations, _mediaws__GetCompatibleVideoSourceConfigurationsResponse &mediaws__GetCompatibleVideoSourceConfigurationsResponse) {
+int MediaBindingService::GetCompatibleVideoSourceConfigurations(_trt__GetCompatibleVideoSourceConfigurations *trt__GetCompatibleVideoSourceConfigurations, _trt__GetCompatibleVideoSourceConfigurationsResponse &trt__GetCompatibleVideoSourceConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetCompatibleVideoSourceConfigurations( mediaws__GetCompatibleVideoSourceConfigurations,  mediaws__GetCompatibleVideoSourceConfigurationsResponse);
+        return MediaService::serviceExt->GetCompatibleVideoSourceConfigurations( trt__GetCompatibleVideoSourceConfigurations,  trt__GetCompatibleVideoSourceConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -447,9 +447,9 @@ int MediaBindingService::GetCompatibleVideoSourceConfigurations(_mediaws__GetCom
 }
 
 /// Web service operation 'GetCompatibleAudioEncoderConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetCompatibleAudioEncoderConfigurations(_mediaws__GetCompatibleAudioEncoderConfigurations *mediaws__GetCompatibleAudioEncoderConfigurations, _mediaws__GetCompatibleAudioEncoderConfigurationsResponse &mediaws__GetCompatibleAudioEncoderConfigurationsResponse) {
+int MediaBindingService::GetCompatibleAudioEncoderConfigurations(_trt__GetCompatibleAudioEncoderConfigurations *trt__GetCompatibleAudioEncoderConfigurations, _trt__GetCompatibleAudioEncoderConfigurationsResponse &trt__GetCompatibleAudioEncoderConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetCompatibleAudioEncoderConfigurations( mediaws__GetCompatibleAudioEncoderConfigurations,  mediaws__GetCompatibleAudioEncoderConfigurationsResponse);
+        return MediaService::serviceExt->GetCompatibleAudioEncoderConfigurations( trt__GetCompatibleAudioEncoderConfigurations,  trt__GetCompatibleAudioEncoderConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -457,9 +457,9 @@ int MediaBindingService::GetCompatibleAudioEncoderConfigurations(_mediaws__GetCo
 }
 
 /// Web service operation 'GetCompatibleAudioSourceConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetCompatibleAudioSourceConfigurations(_mediaws__GetCompatibleAudioSourceConfigurations *mediaws__GetCompatibleAudioSourceConfigurations, _mediaws__GetCompatibleAudioSourceConfigurationsResponse &mediaws__GetCompatibleAudioSourceConfigurationsResponse) {
+int MediaBindingService::GetCompatibleAudioSourceConfigurations(_trt__GetCompatibleAudioSourceConfigurations *trt__GetCompatibleAudioSourceConfigurations, _trt__GetCompatibleAudioSourceConfigurationsResponse &trt__GetCompatibleAudioSourceConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetCompatibleAudioSourceConfigurations( mediaws__GetCompatibleAudioSourceConfigurations, mediaws__GetCompatibleAudioSourceConfigurationsResponse);
+        return MediaService::serviceExt->GetCompatibleAudioSourceConfigurations( trt__GetCompatibleAudioSourceConfigurations, trt__GetCompatibleAudioSourceConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -467,9 +467,9 @@ int MediaBindingService::GetCompatibleAudioSourceConfigurations(_mediaws__GetCom
 }
 
 /// Web service operation 'GetCompatibleVideoAnalyticsConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetCompatibleVideoAnalyticsConfigurations(_mediaws__GetCompatibleVideoAnalyticsConfigurations *mediaws__GetCompatibleVideoAnalyticsConfigurations, _mediaws__GetCompatibleVideoAnalyticsConfigurationsResponse &mediaws__GetCompatibleVideoAnalyticsConfigurationsResponse) {
+int MediaBindingService::GetCompatibleVideoAnalyticsConfigurations(_trt__GetCompatibleVideoAnalyticsConfigurations *trt__GetCompatibleVideoAnalyticsConfigurations, _trt__GetCompatibleVideoAnalyticsConfigurationsResponse &trt__GetCompatibleVideoAnalyticsConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetCompatibleVideoAnalyticsConfigurations( mediaws__GetCompatibleVideoAnalyticsConfigurations, mediaws__GetCompatibleVideoAnalyticsConfigurationsResponse);
+        return MediaService::serviceExt->GetCompatibleVideoAnalyticsConfigurations( trt__GetCompatibleVideoAnalyticsConfigurations, trt__GetCompatibleVideoAnalyticsConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -477,9 +477,9 @@ int MediaBindingService::GetCompatibleVideoAnalyticsConfigurations(_mediaws__Get
 }
 
 /// Web service operation 'GetCompatibleMetadataConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetCompatibleMetadataConfigurations(_mediaws__GetCompatibleMetadataConfigurations *mediaws__GetCompatibleMetadataConfigurations, _mediaws__GetCompatibleMetadataConfigurationsResponse &mediaws__GetCompatibleMetadataConfigurationsResponse) {
+int MediaBindingService::GetCompatibleMetadataConfigurations(_trt__GetCompatibleMetadataConfigurations *trt__GetCompatibleMetadataConfigurations, _trt__GetCompatibleMetadataConfigurationsResponse &trt__GetCompatibleMetadataConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetCompatibleMetadataConfigurations( mediaws__GetCompatibleMetadataConfigurations, mediaws__GetCompatibleMetadataConfigurationsResponse);
+        return MediaService::serviceExt->GetCompatibleMetadataConfigurations( trt__GetCompatibleMetadataConfigurations, trt__GetCompatibleMetadataConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -487,9 +487,9 @@ int MediaBindingService::GetCompatibleMetadataConfigurations(_mediaws__GetCompat
 }
 
 /// Web service operation 'GetCompatibleAudioOutputConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetCompatibleAudioOutputConfigurations(_mediaws__GetCompatibleAudioOutputConfigurations *mediaws__GetCompatibleAudioOutputConfigurations, _mediaws__GetCompatibleAudioOutputConfigurationsResponse &mediaws__GetCompatibleAudioOutputConfigurationsResponse) {
+int MediaBindingService::GetCompatibleAudioOutputConfigurations(_trt__GetCompatibleAudioOutputConfigurations *trt__GetCompatibleAudioOutputConfigurations, _trt__GetCompatibleAudioOutputConfigurationsResponse &trt__GetCompatibleAudioOutputConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetCompatibleAudioOutputConfigurations( mediaws__GetCompatibleAudioOutputConfigurations, mediaws__GetCompatibleAudioOutputConfigurationsResponse);
+        return MediaService::serviceExt->GetCompatibleAudioOutputConfigurations( trt__GetCompatibleAudioOutputConfigurations, trt__GetCompatibleAudioOutputConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -497,9 +497,9 @@ int MediaBindingService::GetCompatibleAudioOutputConfigurations(_mediaws__GetCom
 }
 
 /// Web service operation 'GetCompatibleAudioDecoderConfigurations' (returns error code or SOAP_OK)
-int MediaBindingService::GetCompatibleAudioDecoderConfigurations(_mediaws__GetCompatibleAudioDecoderConfigurations *mediaws__GetCompatibleAudioDecoderConfigurations, _mediaws__GetCompatibleAudioDecoderConfigurationsResponse &mediaws__GetCompatibleAudioDecoderConfigurationsResponse) {
+int MediaBindingService::GetCompatibleAudioDecoderConfigurations(_trt__GetCompatibleAudioDecoderConfigurations *trt__GetCompatibleAudioDecoderConfigurations, _trt__GetCompatibleAudioDecoderConfigurationsResponse &trt__GetCompatibleAudioDecoderConfigurationsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetCompatibleAudioDecoderConfigurations( mediaws__GetCompatibleAudioDecoderConfigurations, mediaws__GetCompatibleAudioDecoderConfigurationsResponse);
+        return MediaService::serviceExt->GetCompatibleAudioDecoderConfigurations( trt__GetCompatibleAudioDecoderConfigurations, trt__GetCompatibleAudioDecoderConfigurationsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -507,9 +507,9 @@ int MediaBindingService::GetCompatibleAudioDecoderConfigurations(_mediaws__GetCo
 }
 
 /// Web service operation 'SetVideoSourceConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::SetVideoSourceConfiguration(_mediaws__SetVideoSourceConfiguration *mediaws__SetVideoSourceConfiguration, _mediaws__SetVideoSourceConfigurationResponse &mediaws__SetVideoSourceConfigurationResponse) {
+int MediaBindingService::SetVideoSourceConfiguration(_trt__SetVideoSourceConfiguration *trt__SetVideoSourceConfiguration, _trt__SetVideoSourceConfigurationResponse &trt__SetVideoSourceConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetVideoSourceConfiguration( mediaws__SetVideoSourceConfiguration, mediaws__SetVideoSourceConfigurationResponse);
+        return MediaService::serviceExt->SetVideoSourceConfiguration( trt__SetVideoSourceConfiguration, trt__SetVideoSourceConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -517,9 +517,9 @@ int MediaBindingService::SetVideoSourceConfiguration(_mediaws__SetVideoSourceCon
 }
 
 /// Web service operation 'SetVideoEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::SetVideoEncoderConfiguration(_mediaws__SetVideoEncoderConfiguration *mediaws__SetVideoEncoderConfiguration, _mediaws__SetVideoEncoderConfigurationResponse &mediaws__SetVideoEncoderConfigurationResponse) {
+int MediaBindingService::SetVideoEncoderConfiguration(_trt__SetVideoEncoderConfiguration *trt__SetVideoEncoderConfiguration, _trt__SetVideoEncoderConfigurationResponse &trt__SetVideoEncoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetVideoEncoderConfiguration( mediaws__SetVideoEncoderConfiguration, mediaws__SetVideoEncoderConfigurationResponse);
+        return MediaService::serviceExt->SetVideoEncoderConfiguration( trt__SetVideoEncoderConfiguration, trt__SetVideoEncoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -527,9 +527,9 @@ int MediaBindingService::SetVideoEncoderConfiguration(_mediaws__SetVideoEncoderC
 }
 
 /// Web service operation 'SetAudioSourceConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::SetAudioSourceConfiguration(_mediaws__SetAudioSourceConfiguration *mediaws__SetAudioSourceConfiguration, _mediaws__SetAudioSourceConfigurationResponse &mediaws__SetAudioSourceConfigurationResponse) {
+int MediaBindingService::SetAudioSourceConfiguration(_trt__SetAudioSourceConfiguration *trt__SetAudioSourceConfiguration, _trt__SetAudioSourceConfigurationResponse &trt__SetAudioSourceConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetAudioSourceConfiguration( mediaws__SetAudioSourceConfiguration, mediaws__SetAudioSourceConfigurationResponse);
+        return MediaService::serviceExt->SetAudioSourceConfiguration( trt__SetAudioSourceConfiguration, trt__SetAudioSourceConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -537,9 +537,9 @@ int MediaBindingService::SetAudioSourceConfiguration(_mediaws__SetAudioSourceCon
 }
 
 /// Web service operation 'SetAudioEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::SetAudioEncoderConfiguration(_mediaws__SetAudioEncoderConfiguration *mediaws__SetAudioEncoderConfiguration, _mediaws__SetAudioEncoderConfigurationResponse &mediaws__SetAudioEncoderConfigurationResponse) {
+int MediaBindingService::SetAudioEncoderConfiguration(_trt__SetAudioEncoderConfiguration *trt__SetAudioEncoderConfiguration, _trt__SetAudioEncoderConfigurationResponse &trt__SetAudioEncoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetAudioEncoderConfiguration( mediaws__SetAudioEncoderConfiguration, mediaws__SetAudioEncoderConfigurationResponse);
+        return MediaService::serviceExt->SetAudioEncoderConfiguration( trt__SetAudioEncoderConfiguration, trt__SetAudioEncoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -547,9 +547,9 @@ int MediaBindingService::SetAudioEncoderConfiguration(_mediaws__SetAudioEncoderC
 }
 
 /// Web service operation 'SetVideoAnalyticsConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::SetVideoAnalyticsConfiguration(_mediaws__SetVideoAnalyticsConfiguration *mediaws__SetVideoAnalyticsConfiguration, _mediaws__SetVideoAnalyticsConfigurationResponse &mediaws__SetVideoAnalyticsConfigurationResponse) {
+int MediaBindingService::SetVideoAnalyticsConfiguration(_trt__SetVideoAnalyticsConfiguration *trt__SetVideoAnalyticsConfiguration, _trt__SetVideoAnalyticsConfigurationResponse &trt__SetVideoAnalyticsConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetVideoAnalyticsConfiguration( mediaws__SetVideoAnalyticsConfiguration,  mediaws__SetVideoAnalyticsConfigurationResponse);
+        return MediaService::serviceExt->SetVideoAnalyticsConfiguration( trt__SetVideoAnalyticsConfiguration,  trt__SetVideoAnalyticsConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -557,9 +557,9 @@ int MediaBindingService::SetVideoAnalyticsConfiguration(_mediaws__SetVideoAnalyt
 }
 
 /// Web service operation 'SetMetadataConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::SetMetadataConfiguration(_mediaws__SetMetadataConfiguration *mediaws__SetMetadataConfiguration, _mediaws__SetMetadataConfigurationResponse &mediaws__SetMetadataConfigurationResponse) {
+int MediaBindingService::SetMetadataConfiguration(_trt__SetMetadataConfiguration *trt__SetMetadataConfiguration, _trt__SetMetadataConfigurationResponse &trt__SetMetadataConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetMetadataConfiguration( mediaws__SetMetadataConfiguration,  mediaws__SetMetadataConfigurationResponse);
+        return MediaService::serviceExt->SetMetadataConfiguration( trt__SetMetadataConfiguration,  trt__SetMetadataConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -567,9 +567,9 @@ int MediaBindingService::SetMetadataConfiguration(_mediaws__SetMetadataConfigura
 }
 
 /// Web service operation 'SetAudioOutputConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::SetAudioOutputConfiguration(_mediaws__SetAudioOutputConfiguration *mediaws__SetAudioOutputConfiguration, _mediaws__SetAudioOutputConfigurationResponse &mediaws__SetAudioOutputConfigurationResponse) {
+int MediaBindingService::SetAudioOutputConfiguration(_trt__SetAudioOutputConfiguration *trt__SetAudioOutputConfiguration, _trt__SetAudioOutputConfigurationResponse &trt__SetAudioOutputConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetAudioOutputConfiguration( mediaws__SetAudioOutputConfiguration, mediaws__SetAudioOutputConfigurationResponse);
+        return MediaService::serviceExt->SetAudioOutputConfiguration( trt__SetAudioOutputConfiguration, trt__SetAudioOutputConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -577,9 +577,9 @@ int MediaBindingService::SetAudioOutputConfiguration(_mediaws__SetAudioOutputCon
 }
 
 /// Web service operation 'SetAudioDecoderConfiguration' (returns error code or SOAP_OK)
-int MediaBindingService::SetAudioDecoderConfiguration(_mediaws__SetAudioDecoderConfiguration *mediaws__SetAudioDecoderConfiguration, _mediaws__SetAudioDecoderConfigurationResponse &mediaws__SetAudioDecoderConfigurationResponse) {
+int MediaBindingService::SetAudioDecoderConfiguration(_trt__SetAudioDecoderConfiguration *trt__SetAudioDecoderConfiguration, _trt__SetAudioDecoderConfigurationResponse &trt__SetAudioDecoderConfigurationResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetAudioDecoderConfiguration(mediaws__SetAudioDecoderConfiguration,   mediaws__SetAudioDecoderConfigurationResponse);
+        return MediaService::serviceExt->SetAudioDecoderConfiguration(trt__SetAudioDecoderConfiguration,   trt__SetAudioDecoderConfigurationResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -587,9 +587,9 @@ int MediaBindingService::SetAudioDecoderConfiguration(_mediaws__SetAudioDecoderC
 }
 
 /// Web service operation 'GetVideoSourceConfigurationOptions' (returns error code or SOAP_OK)
-int MediaBindingService::GetVideoSourceConfigurationOptions(_mediaws__GetVideoSourceConfigurationOptions *mediaws__GetVideoSourceConfigurationOptions, _mediaws__GetVideoSourceConfigurationOptionsResponse &mediaws__GetVideoSourceConfigurationOptionsResponse) {
+int MediaBindingService::GetVideoSourceConfigurationOptions(_trt__GetVideoSourceConfigurationOptions *trt__GetVideoSourceConfigurationOptions, _trt__GetVideoSourceConfigurationOptionsResponse &trt__GetVideoSourceConfigurationOptionsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetVideoSourceConfigurationOptions( mediaws__GetVideoSourceConfigurationOptions,  mediaws__GetVideoSourceConfigurationOptionsResponse);
+        return MediaService::serviceExt->GetVideoSourceConfigurationOptions( trt__GetVideoSourceConfigurationOptions,  trt__GetVideoSourceConfigurationOptionsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -597,9 +597,9 @@ int MediaBindingService::GetVideoSourceConfigurationOptions(_mediaws__GetVideoSo
 }
 
 /// Web service operation 'GetVideoEncoderConfigurationOptions' (returns error code or SOAP_OK)
-int MediaBindingService::GetVideoEncoderConfigurationOptions(_mediaws__GetVideoEncoderConfigurationOptions *mediaws__GetVideoEncoderConfigurationOptions, _mediaws__GetVideoEncoderConfigurationOptionsResponse &mediaws__GetVideoEncoderConfigurationOptionsResponse) {
+int MediaBindingService::GetVideoEncoderConfigurationOptions(_trt__GetVideoEncoderConfigurationOptions *trt__GetVideoEncoderConfigurationOptions, _trt__GetVideoEncoderConfigurationOptionsResponse &trt__GetVideoEncoderConfigurationOptionsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetVideoEncoderConfigurationOptions( mediaws__GetVideoEncoderConfigurationOptions, mediaws__GetVideoEncoderConfigurationOptionsResponse);
+        return MediaService::serviceExt->GetVideoEncoderConfigurationOptions( trt__GetVideoEncoderConfigurationOptions, trt__GetVideoEncoderConfigurationOptionsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -607,9 +607,9 @@ int MediaBindingService::GetVideoEncoderConfigurationOptions(_mediaws__GetVideoE
 }
 
 /// Web service operation 'GetAudioSourceConfigurationOptions' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioSourceConfigurationOptions(_mediaws__GetAudioSourceConfigurationOptions *mediaws__GetAudioSourceConfigurationOptions, _mediaws__GetAudioSourceConfigurationOptionsResponse &mediaws__GetAudioSourceConfigurationOptionsResponse) {
+int MediaBindingService::GetAudioSourceConfigurationOptions(_trt__GetAudioSourceConfigurationOptions *trt__GetAudioSourceConfigurationOptions, _trt__GetAudioSourceConfigurationOptionsResponse &trt__GetAudioSourceConfigurationOptionsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioSourceConfigurationOptions( mediaws__GetAudioSourceConfigurationOptions, mediaws__GetAudioSourceConfigurationOptionsResponse);
+        return MediaService::serviceExt->GetAudioSourceConfigurationOptions( trt__GetAudioSourceConfigurationOptions, trt__GetAudioSourceConfigurationOptionsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -617,9 +617,9 @@ int MediaBindingService::GetAudioSourceConfigurationOptions(_mediaws__GetAudioSo
 }
 
 /// Web service operation 'GetAudioEncoderConfigurationOptions' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioEncoderConfigurationOptions(_mediaws__GetAudioEncoderConfigurationOptions *mediaws__GetAudioEncoderConfigurationOptions, _mediaws__GetAudioEncoderConfigurationOptionsResponse &mediaws__GetAudioEncoderConfigurationOptionsResponse) {
+int MediaBindingService::GetAudioEncoderConfigurationOptions(_trt__GetAudioEncoderConfigurationOptions *trt__GetAudioEncoderConfigurationOptions, _trt__GetAudioEncoderConfigurationOptionsResponse &trt__GetAudioEncoderConfigurationOptionsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioEncoderConfigurationOptions( mediaws__GetAudioEncoderConfigurationOptions, mediaws__GetAudioEncoderConfigurationOptionsResponse);
+        return MediaService::serviceExt->GetAudioEncoderConfigurationOptions( trt__GetAudioEncoderConfigurationOptions, trt__GetAudioEncoderConfigurationOptionsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -627,9 +627,9 @@ int MediaBindingService::GetAudioEncoderConfigurationOptions(_mediaws__GetAudioE
 }
 
 /// Web service operation 'GetMetadataConfigurationOptions' (returns error code or SOAP_OK)
-int MediaBindingService::GetMetadataConfigurationOptions(_mediaws__GetMetadataConfigurationOptions *mediaws__GetMetadataConfigurationOptions, _mediaws__GetMetadataConfigurationOptionsResponse &mediaws__GetMetadataConfigurationOptionsResponse) {
+int MediaBindingService::GetMetadataConfigurationOptions(_trt__GetMetadataConfigurationOptions *trt__GetMetadataConfigurationOptions, _trt__GetMetadataConfigurationOptionsResponse &trt__GetMetadataConfigurationOptionsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetMetadataConfigurationOptions( mediaws__GetMetadataConfigurationOptions, mediaws__GetMetadataConfigurationOptionsResponse);
+        return MediaService::serviceExt->GetMetadataConfigurationOptions( trt__GetMetadataConfigurationOptions, trt__GetMetadataConfigurationOptionsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -637,9 +637,9 @@ int MediaBindingService::GetMetadataConfigurationOptions(_mediaws__GetMetadataCo
 }
 
 /// Web service operation 'GetAudioOutputConfigurationOptions' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioOutputConfigurationOptions(_mediaws__GetAudioOutputConfigurationOptions *mediaws__GetAudioOutputConfigurationOptions, _mediaws__GetAudioOutputConfigurationOptionsResponse &mediaws__GetAudioOutputConfigurationOptionsResponse) {
+int MediaBindingService::GetAudioOutputConfigurationOptions(_trt__GetAudioOutputConfigurationOptions *trt__GetAudioOutputConfigurationOptions, _trt__GetAudioOutputConfigurationOptionsResponse &trt__GetAudioOutputConfigurationOptionsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioOutputConfigurationOptions( mediaws__GetAudioOutputConfigurationOptions,  mediaws__GetAudioOutputConfigurationOptionsResponse);
+        return MediaService::serviceExt->GetAudioOutputConfigurationOptions( trt__GetAudioOutputConfigurationOptions,  trt__GetAudioOutputConfigurationOptionsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -647,9 +647,9 @@ int MediaBindingService::GetAudioOutputConfigurationOptions(_mediaws__GetAudioOu
 }
 
 /// Web service operation 'GetAudioDecoderConfigurationOptions' (returns error code or SOAP_OK)
-int MediaBindingService::GetAudioDecoderConfigurationOptions(_mediaws__GetAudioDecoderConfigurationOptions *mediaws__GetAudioDecoderConfigurationOptions, _mediaws__GetAudioDecoderConfigurationOptionsResponse &mediaws__GetAudioDecoderConfigurationOptionsResponse) {
+int MediaBindingService::GetAudioDecoderConfigurationOptions(_trt__GetAudioDecoderConfigurationOptions *trt__GetAudioDecoderConfigurationOptions, _trt__GetAudioDecoderConfigurationOptionsResponse &trt__GetAudioDecoderConfigurationOptionsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetAudioDecoderConfigurationOptions( mediaws__GetAudioDecoderConfigurationOptions, mediaws__GetAudioDecoderConfigurationOptionsResponse);
+        return MediaService::serviceExt->GetAudioDecoderConfigurationOptions( trt__GetAudioDecoderConfigurationOptions, trt__GetAudioDecoderConfigurationOptionsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -657,9 +657,9 @@ int MediaBindingService::GetAudioDecoderConfigurationOptions(_mediaws__GetAudioD
 }
 
 /// Web service operation 'GetGuaranteedNumberOfVideoEncoderInstances' (returns error code or SOAP_OK)
-int MediaBindingService::GetGuaranteedNumberOfVideoEncoderInstances(_mediaws__GetGuaranteedNumberOfVideoEncoderInstances *mediaws__GetGuaranteedNumberOfVideoEncoderInstances, _mediaws__GetGuaranteedNumberOfVideoEncoderInstancesResponse &mediaws__GetGuaranteedNumberOfVideoEncoderInstancesResponse) {
+int MediaBindingService::GetGuaranteedNumberOfVideoEncoderInstances(_trt__GetGuaranteedNumberOfVideoEncoderInstances *trt__GetGuaranteedNumberOfVideoEncoderInstances, _trt__GetGuaranteedNumberOfVideoEncoderInstancesResponse &trt__GetGuaranteedNumberOfVideoEncoderInstancesResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetGuaranteedNumberOfVideoEncoderInstances( mediaws__GetGuaranteedNumberOfVideoEncoderInstances, mediaws__GetGuaranteedNumberOfVideoEncoderInstancesResponse);
+        return MediaService::serviceExt->GetGuaranteedNumberOfVideoEncoderInstances( trt__GetGuaranteedNumberOfVideoEncoderInstances, trt__GetGuaranteedNumberOfVideoEncoderInstancesResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -667,9 +667,9 @@ int MediaBindingService::GetGuaranteedNumberOfVideoEncoderInstances(_mediaws__Ge
 }
 
 /// Web service operation 'GetStreamUri' (returns error code or SOAP_OK)
-int MediaBindingService::GetStreamUri(_mediaws__GetStreamUri *mediaws__GetStreamUri, _mediaws__GetStreamUriResponse &mediaws__GetStreamUriResponse) {
+int MediaBindingService::GetStreamUri(_trt__GetStreamUri *trt__GetStreamUri, _trt__GetStreamUriResponse &trt__GetStreamUriResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetStreamUri( mediaws__GetStreamUri,  mediaws__GetStreamUriResponse);
+        return MediaService::serviceExt->GetStreamUri( trt__GetStreamUri,  trt__GetStreamUriResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -677,9 +677,9 @@ int MediaBindingService::GetStreamUri(_mediaws__GetStreamUri *mediaws__GetStream
 }
 
 /// Web service operation 'StartMulticastStreaming' (returns error code or SOAP_OK)
-int MediaBindingService::StartMulticastStreaming(_mediaws__StartMulticastStreaming *mediaws__StartMulticastStreaming, _mediaws__StartMulticastStreamingResponse &mediaws__StartMulticastStreamingResponse) {
+int MediaBindingService::StartMulticastStreaming(_trt__StartMulticastStreaming *trt__StartMulticastStreaming, _trt__StartMulticastStreamingResponse &trt__StartMulticastStreamingResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->StartMulticastStreaming( mediaws__StartMulticastStreaming, mediaws__StartMulticastStreamingResponse);
+        return MediaService::serviceExt->StartMulticastStreaming( trt__StartMulticastStreaming, trt__StartMulticastStreamingResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -687,9 +687,9 @@ int MediaBindingService::StartMulticastStreaming(_mediaws__StartMulticastStreami
 }
 
 /// Web service operation 'StopMulticastStreaming' (returns error code or SOAP_OK)
-int MediaBindingService::StopMulticastStreaming(_mediaws__StopMulticastStreaming *mediaws__StopMulticastStreaming, _mediaws__StopMulticastStreamingResponse &mediaws__StopMulticastStreamingResponse) {
+int MediaBindingService::StopMulticastStreaming(_trt__StopMulticastStreaming *trt__StopMulticastStreaming, _trt__StopMulticastStreamingResponse &trt__StopMulticastStreamingResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->StopMulticastStreaming( mediaws__StopMulticastStreaming, mediaws__StopMulticastStreamingResponse);
+        return MediaService::serviceExt->StopMulticastStreaming( trt__StopMulticastStreaming, trt__StopMulticastStreamingResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -697,9 +697,9 @@ int MediaBindingService::StopMulticastStreaming(_mediaws__StopMulticastStreaming
 }
 
 /// Web service operation 'SetSynchronizationPoint' (returns error code or SOAP_OK)
-int MediaBindingService::SetSynchronizationPoint(_mediaws__SetSynchronizationPoint *mediaws__SetSynchronizationPoint, _mediaws__SetSynchronizationPointResponse &mediaws__SetSynchronizationPointResponse) {
+int MediaBindingService::SetSynchronizationPoint(_trt__SetSynchronizationPoint *trt__SetSynchronizationPoint, _trt__SetSynchronizationPointResponse &trt__SetSynchronizationPointResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetSynchronizationPoint( mediaws__SetSynchronizationPoint, mediaws__SetSynchronizationPointResponse);
+        return MediaService::serviceExt->SetSynchronizationPoint( trt__SetSynchronizationPoint, trt__SetSynchronizationPointResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -707,9 +707,9 @@ int MediaBindingService::SetSynchronizationPoint(_mediaws__SetSynchronizationPoi
 }
 
 /// Web service operation 'GetSnapshotUri' (returns error code or SOAP_OK)
-int MediaBindingService::GetSnapshotUri(_mediaws__GetSnapshotUri *mediaws__GetSnapshotUri, _mediaws__GetSnapshotUriResponse &mediaws__GetSnapshotUriResponse) {
+int MediaBindingService::GetSnapshotUri(_trt__GetSnapshotUri *trt__GetSnapshotUri, _trt__GetSnapshotUriResponse &trt__GetSnapshotUriResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetSnapshotUri( mediaws__GetSnapshotUri, mediaws__GetSnapshotUriResponse);
+        return MediaService::serviceExt->GetSnapshotUri( trt__GetSnapshotUri, trt__GetSnapshotUriResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -717,9 +717,9 @@ int MediaBindingService::GetSnapshotUri(_mediaws__GetSnapshotUri *mediaws__GetSn
 }
 
 /// Web service operation 'GetVideoSourceModes' (returns error code or SOAP_OK)
-int MediaBindingService::GetVideoSourceModes(_mediaws__GetVideoSourceModes *mediaws__GetVideoSourceModes, _mediaws__GetVideoSourceModesResponse &mediaws__GetVideoSourceModesResponse) {
+int MediaBindingService::GetVideoSourceModes(_trt__GetVideoSourceModes *trt__GetVideoSourceModes, _trt__GetVideoSourceModesResponse &trt__GetVideoSourceModesResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetVideoSourceModes( mediaws__GetVideoSourceModes, mediaws__GetVideoSourceModesResponse);
+        return MediaService::serviceExt->GetVideoSourceModes( trt__GetVideoSourceModes, trt__GetVideoSourceModesResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -727,9 +727,9 @@ int MediaBindingService::GetVideoSourceModes(_mediaws__GetVideoSourceModes *medi
 }
 
 /// Web service operation 'SetVideoSourceMode' (returns error code or SOAP_OK)
-int MediaBindingService::SetVideoSourceMode(_mediaws__SetVideoSourceMode *mediaws__SetVideoSourceMode, _mediaws__SetVideoSourceModeResponse &mediaws__SetVideoSourceModeResponse) {
+int MediaBindingService::SetVideoSourceMode(_trt__SetVideoSourceMode *trt__SetVideoSourceMode, _trt__SetVideoSourceModeResponse &trt__SetVideoSourceModeResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetVideoSourceMode( mediaws__SetVideoSourceMode, mediaws__SetVideoSourceModeResponse);
+        return MediaService::serviceExt->SetVideoSourceMode( trt__SetVideoSourceMode, trt__SetVideoSourceModeResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -737,9 +737,9 @@ int MediaBindingService::SetVideoSourceMode(_mediaws__SetVideoSourceMode *mediaw
 }
 
 /// Web service operation 'GetOSDs' (returns error code or SOAP_OK)
-int MediaBindingService::GetOSDs(_mediaws__GetOSDs *mediaws__GetOSDs, _mediaws__GetOSDsResponse &mediaws__GetOSDsResponse) {
+int MediaBindingService::GetOSDs(_trt__GetOSDs *trt__GetOSDs, _trt__GetOSDsResponse &trt__GetOSDsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetOSDs( mediaws__GetOSDs, mediaws__GetOSDsResponse);
+        return MediaService::serviceExt->GetOSDs( trt__GetOSDs, trt__GetOSDsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -747,9 +747,9 @@ int MediaBindingService::GetOSDs(_mediaws__GetOSDs *mediaws__GetOSDs, _mediaws__
 }
 
 /// Web service operation 'GetOSD' (returns error code or SOAP_OK)
-int MediaBindingService::GetOSD(_mediaws__GetOSD *mediaws__GetOSD, _mediaws__GetOSDResponse &mediaws__GetOSDResponse) {
+int MediaBindingService::GetOSD(_trt__GetOSD *trt__GetOSD, _trt__GetOSDResponse &trt__GetOSDResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetOSD( mediaws__GetOSD, mediaws__GetOSDResponse);
+        return MediaService::serviceExt->GetOSD( trt__GetOSD, trt__GetOSDResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -757,9 +757,9 @@ int MediaBindingService::GetOSD(_mediaws__GetOSD *mediaws__GetOSD, _mediaws__Get
 }
 
 /// Web service operation 'GetOSDOptions' (returns error code or SOAP_OK)
-int MediaBindingService::GetOSDOptions(_mediaws__GetOSDOptions *mediaws__GetOSDOptions, _mediaws__GetOSDOptionsResponse &mediaws__GetOSDOptionsResponse) {
+int MediaBindingService::GetOSDOptions(_trt__GetOSDOptions *trt__GetOSDOptions, _trt__GetOSDOptionsResponse &trt__GetOSDOptionsResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->GetOSDOptions( mediaws__GetOSDOptions,  mediaws__GetOSDOptionsResponse);
+        return MediaService::serviceExt->GetOSDOptions( trt__GetOSDOptions,  trt__GetOSDOptionsResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -767,9 +767,9 @@ int MediaBindingService::GetOSDOptions(_mediaws__GetOSDOptions *mediaws__GetOSDO
 }
 
 /// Web service operation 'SetOSD' (returns error code or SOAP_OK)
-int MediaBindingService::SetOSD(_mediaws__SetOSD *mediaws__SetOSD, _mediaws__SetOSDResponse &mediaws__SetOSDResponse) {
+int MediaBindingService::SetOSD(_trt__SetOSD *trt__SetOSD, _trt__SetOSDResponse &trt__SetOSDResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->SetOSD( mediaws__SetOSD, mediaws__SetOSDResponse);
+        return MediaService::serviceExt->SetOSD( trt__SetOSD, trt__SetOSDResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -777,9 +777,9 @@ int MediaBindingService::SetOSD(_mediaws__SetOSD *mediaws__SetOSD, _mediaws__Set
 }
 
 /// Web service operation 'CreateOSD' (returns error code or SOAP_OK)
-int MediaBindingService::CreateOSD(_mediaws__CreateOSD *mediaws__CreateOSD, _mediaws__CreateOSDResponse &mediaws__CreateOSDResponse) {
+int MediaBindingService::CreateOSD(_trt__CreateOSD *trt__CreateOSD, _trt__CreateOSDResponse &trt__CreateOSDResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->CreateOSD( mediaws__CreateOSD, mediaws__CreateOSDResponse);
+        return MediaService::serviceExt->CreateOSD( trt__CreateOSD, trt__CreateOSDResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;
@@ -787,9 +787,9 @@ int MediaBindingService::CreateOSD(_mediaws__CreateOSD *mediaws__CreateOSD, _med
 }
 
 /// Web service operation 'DeleteOSD' (returns error code or SOAP_OK)
-int MediaBindingService::DeleteOSD(_mediaws__DeleteOSD *mediaws__DeleteOSD, _mediaws__DeleteOSDResponse &mediaws__DeleteOSDResponse) {
+int MediaBindingService::DeleteOSD(_trt__DeleteOSD *trt__DeleteOSD, _trt__DeleteOSDResponse &trt__DeleteOSDResponse) {
     if(MediaService::serviceExt != NULL){
-        return MediaService::serviceExt->DeleteOSD( mediaws__DeleteOSD, mediaws__DeleteOSDResponse);
+        return MediaService::serviceExt->DeleteOSD( trt__DeleteOSD, trt__DeleteOSDResponse);
     } else {
         qDebug() << "MediaService::serviceExt is NULL\n";
         return SOAP_ERR;

@@ -21,8 +21,8 @@ QVector<std::string>  Media::getProfileTokens(QString devServiceURL) {
 
     MediaBindingProxy p;
 
-    _mediaws__GetProfiles in;
-    _mediaws__GetProfilesResponse out;
+    _trt__GetProfiles in;
+    _trt__GetProfilesResponse out;
 
     if (p.GetProfiles(devServiceURL.toStdString().data(), NULL, &in, out) == SOAP_OK) {
         //ok
@@ -48,8 +48,8 @@ std::string Media::getStreamURL(QString devServiceURL, std::string profileToken)
 
     MediaBindingProxy p;
 
-    _mediaws__GetStreamUri in;
-    _mediaws__GetStreamUriResponse out;
+    _trt__GetStreamUri in;
+    _trt__GetStreamUriResponse out;
 
     in.ProfileToken = profileToken;
 
