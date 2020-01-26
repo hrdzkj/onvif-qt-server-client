@@ -6,12 +6,27 @@
 
 QT       += core
 
-DESTDIR = ../../OnvifDist
+#DESTDIR = ../../OnvifDist
+DESTDIR = ../../../libexe
 
 TARGET = OnvifMediaLib
-TEMPLATE = lib
+#TEMPLATE = lib
+TEMPLATE = app
+CONFIG += console
 
 DEFINES += MYDLL_LIBRARY
+DEFINES += WITH_DOM
+DEFINES += WITH_OPENSSL
+
+LIBS += -L"C:\openssl-1.0.2u\lib" -llibeay32
+LIBS += -L"C:\openssl-1.0.2u\lib" -lssleay32
+
+
+# include openssl
+INCLUDEPATH += C:\openssl-1.0.2u\include \
+               soap \
+               soap\plugin
+
 
 SOURCES += \
     onvif/mediaserviceimplement.cpp \
@@ -20,7 +35,15 @@ SOURCES += \
     soap/onvifmediaC.cpp \
     soap/onvifmediaMediaBindingService.cpp \
     soap/onvifmediaMediaBindingProxy.cpp \
-    soap/duration.cpp
+    soap/duration.cpp \
+    onvif/main.cpp \
+    soap/dom.cpp \
+    soap/onvifmediaC.cpp \
+    soap/plugin/wsseapi.cpp \
+    soap/plugin/mecevp.c \
+    soap/plugin/smdevp.c \
+    soap/plugin/wsaapi.cpp \
+    soap/plugin/threads.c
 
 HEADERS  += \
     onvif/media.h \
@@ -33,7 +56,12 @@ HEADERS  += \
     soap/onvifmediaMediaBindingService.h \
     soap/onvifmediaMediaBindingProxy.h \
     soap/duration.h \
-    exportdef/mydll_global.h
+    exportdef/mydll_global.h \
+    soap/plugin/mecevp.h \
+    soap/plugin/smdevp.h \
+    soap/plugin/threads.h \
+    soap/plugin/wsseapi.h \
+    soap/plugin/wsaapi.h
 
 win32{
     LIBS += -lws2_32
