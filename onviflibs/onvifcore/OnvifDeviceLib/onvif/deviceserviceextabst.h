@@ -279,7 +279,6 @@ public:
 
     /// Web service operation 'DeleteGeoLocation' (returns error code or SOAP_OK)
     virtual	int DeleteGeoLocation(_tds__DeleteGeoLocation *tds__DeleteGeoLocation, _tds__DeleteGeoLocationResponse &tds__DeleteGeoLocationResponse) =0;
-
 };
 
 #endif // DEVICESERVICEEXTABST_H

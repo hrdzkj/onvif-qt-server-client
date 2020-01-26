@@ -4,6 +4,23 @@
 #include <QString>
 #include "soap/onvifdeviceDeviceBindingProxy.h"
 #include "soap/onvifdevice.nsmap"
+#include "wsseapi.h"
+
+
+static int ONVIF_SetAuthInfo(struct soap *soap, const char *username, const char *password)
+{
+    int result = 0;
+
+    //SOAP_ASSERT(NULL != username);
+    //SOAP_ASSERT(NULL != password);
+
+    result = soap_wsse_add_UsernameTokenDigest(soap, NULL, username, password);
+    //SOAP_CHECK_ERROR(result, soap, "add_UsernameTokenDigest");
+
+EXIT:
+
+    return result;
+}
 
 Device::Device()
 {
@@ -21,10 +38,11 @@ void Device::getDeviceInformation(QString devServiceURL) {
     qDebug() << "device manager service test: getDeviceInformation";
 
     DeviceBindingProxy d;
-
     _tds__GetDeviceInformation in;
     _tds__GetDeviceInformationResponse out;
 
+    struct soap *soap = &d;
+    ONVIF_SetAuthInfo(soap, "admin", "admin");
     if (d.GetDeviceInformation(devServiceURL.toStdString().data(), NULL, &in, out) == SOAP_OK) {
         //ok    
         qDebug() << (char*)out.soap->data;
@@ -42,12 +60,15 @@ void Device::getDeviceInformation(QString devServiceURL) {
 }
 
 
+
 void Device::getServices(QString devServiceURL) {
     qDebug() << "device manager service test: getServices";
     DeviceBindingProxy d;
      _tds__GetServices in;
      _tds__GetServicesResponse out;
 
+     struct soap *soap = &d;
+     ONVIF_SetAuthInfo(soap, "admin", "admin");
     if (d.GetServices(devServiceURL.toStdString().data(), NULL, &in, out) == SOAP_OK) {
         //ok
         for(int i=0; i<out.Service.size(); i++){

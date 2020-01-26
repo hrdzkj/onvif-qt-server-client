@@ -9,22 +9,6 @@ compiling, linking, and/or using OpenSSL is allowed.
 */
 
 #include "onvifdeviceDeviceBindingProxy.h"
-#include "wsseapi.h"
-
-static int ONVIF_SetAuthInfo(struct soap *soap, const char *username, const char *password)
-{
-    int result = 0;
-
-    //SOAP_ASSERT(NULL != username);
-    //SOAP_ASSERT(NULL != password);
-
-    result = soap_wsse_add_UsernameTokenDigest(soap, NULL, username, password);
-    //SOAP_CHECK_ERROR(result, soap, "add_UsernameTokenDigest");
-
-EXIT:
-
-    return result;
-}
 
 DeviceBindingProxy::DeviceBindingProxy()
 {	DeviceBindingProxy_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
@@ -161,7 +145,6 @@ int DeviceBindingProxy::GetServices(const char *endpoint, const char *soap_actio
 	if (soap_action == NULL)
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetServices";
 	soap_begin(soap);
-    ONVIF_SetAuthInfo(soap, "admin", "admin"); //liuyi add
 	soap->encodingStyle = NULL;
 	soap_tmp___tds__GetServices.tds__GetServices = tds__GetServices;
 	soap_serializeheader(soap);
@@ -269,7 +252,6 @@ int DeviceBindingProxy::GetDeviceInformation(const char *endpoint, const char *s
 	if (soap_action == NULL)
 		soap_action = "http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation";
 	soap_begin(soap);
-    ONVIF_SetAuthInfo(soap, "admin", "admin"); //liuyi add
 	soap->encodingStyle = NULL;
 	soap_tmp___tds__GetDeviceInformation.tds__GetDeviceInformation = tds__GetDeviceInformation;
 	soap_serializeheader(soap);
