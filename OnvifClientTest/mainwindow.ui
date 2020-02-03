@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>576</height>
+    <height>602</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -59,9 +59,9 @@
    <widget class="QComboBox" name="onvifDevCB">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>510</y>
-      <width>371</width>
+      <x>100</x>
+      <y>480</y>
+      <width>271</width>
       <height>22</height>
      </rect>
     </property>
@@ -134,8 +134,8 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>490</y>
+      <x>10</x>
+      <y>480</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -412,7 +412,7 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

@@ -6,13 +6,13 @@
 
 QT       += core
 
-#DESTDIR = ../../../OnvifDist
-DESTDIR = ../../../libexe
+DESTDIR = ../../../OnvifDist
+#DESTDIR = ../../../libexe
 
 TARGET = OnvifDeviceLib
 
-#TEMPLATE = lib
-TEMPLATE = app
+TEMPLATE = lib
+#TEMPLATE = app
 CONFIG += console
 
 DEFINES += MYDLL_LIBRARY
@@ -37,14 +37,15 @@ SOURCES += \
     soap/duration.cpp \
     onvif/device.cpp \
     onvif/deviceserviceimplement.cpp \
-    onvif/main.cpp \
+#    onvif/main.cpp \
     soap/dom.cpp \
     soap/onvifdeviceC.cpp \
     soap/plugin/wsseapi.cpp \
     soap/plugin/mecevp.c \
     soap/plugin/smdevp.c \
     soap/plugin/wsaapi.cpp \
-    soap/plugin/threads.c
+    soap/plugin/threads.c \
+    onvif/authority.cpp
 
 
 HEADERS  += \
@@ -63,7 +64,8 @@ HEADERS  += \
     soap/plugin/smdevp.h \
     soap/plugin/threads.h \
     soap/plugin/wsseapi.h \
-    soap/plugin/wsaapi.h
+    soap/plugin/wsaapi.h \
+    onvif/authority.h
 
 win32{
     LIBS += -lws2_32

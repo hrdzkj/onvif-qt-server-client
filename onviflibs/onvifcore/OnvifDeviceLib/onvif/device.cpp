@@ -1,26 +1,13 @@
-#include "device.h"
+﻿#include "device.h"
 #include <QDebug>
 #include <QObject>
 #include <QString>
 #include "soap/onvifdeviceDeviceBindingProxy.h"
 #include "soap/onvifdevice.nsmap"
-#include "wsseapi.h"
+
+#include "authority.h"
 
 
-static int ONVIF_SetAuthInfo(struct soap *soap, const char *username, const char *password)
-{
-    int result = 0;
-
-    //SOAP_ASSERT(NULL != username);
-    //SOAP_ASSERT(NULL != password);
-
-    result = soap_wsse_add_UsernameTokenDigest(soap, NULL, username, password);
-    //SOAP_CHECK_ERROR(result, soap, "add_UsernameTokenDigest");
-
-EXIT:
-
-    return result;
-}
 
 Device::Device()
 {
@@ -42,7 +29,7 @@ void Device::getDeviceInformation(QString devServiceURL) {
     _tds__GetDeviceInformationResponse out;
 
     struct soap *soap = &d;
-    ONVIF_SetAuthInfo(soap, "admin", "admin");
+    Authority::addSoapUsernameTokenDigest(soap, "admin", "admin");
     if (d.GetDeviceInformation(devServiceURL.toStdString().data(), NULL, &in, out) == SOAP_OK) {
         //ok    
         qDebug() << (char*)out.soap->data;
@@ -61,33 +48,47 @@ void Device::getDeviceInformation(QString devServiceURL) {
 
 
 
-void Device::getServices(QString devServiceURL) {
+QVector<string> Device::getServices(const char * deviceAddr) {
     qDebug() << "device manager service test: getServices";
     DeviceBindingProxy d;
      _tds__GetServices in;
      _tds__GetServicesResponse out;
-
+     QVector<std::string> serviceList;
      struct soap *soap = &d;
-     ONVIF_SetAuthInfo(soap, "admin", "admin");
-    if (d.GetServices(devServiceURL.toStdString().data(), NULL, &in, out) == SOAP_OK) {
+     //soap_set_sent_logfile(soap, "./log/getServices_Sent.log");
+     //soap_set_recv_logfile(soap, "./log/getServices_Recv.log");
+
+     Authority::addSoapUsernameTokenDigest(soap, "admin", "admin");
+    if (d.GetServices(deviceAddr, NULL, &in, out) == SOAP_OK) {
         //ok
         for(int i=0; i<out.Service.size(); i++){
-            if(strcmp(out.Service[i]->Namespace.data(), "http://www.onvif.org/ver20/media/wsdl") == 0)
-            {
-                printf("media_addr[%d] %s\n", i, out.Service[i]->XAddr.data());
-            }
-            if(strcmp(out.Service[i]->Namespace.data(), "http://www.onvif.org/ver10/media/wsdl") == 0)
-            {
-                printf(" media_addr->XAddr[%d] %s\n", i, out.Service[i]->XAddr.data());
-            }
+             serviceList.append(out.Service[i]->XAddr.data());
          }
-    } else {
-        //error
-        d.soap_print_fault(stderr);
-        //fflush(stderr);
+    } else {  
+        d.soap_print_fault(stderr);  
     }
-    return ;
+    return serviceList ;
 }
+
+QVector<string> Device::getWsdlUrl(const char * deviceAddr) {
+    qDebug() << "device manager service test: getServices";
+    DeviceBindingProxy d;
+     _tds__GetWsdlUrl in;
+     _tds__GetWsdlUrlResponse out;
+     QVector<std::string> wsdlList;
+     struct soap *soap = &d;
+     soap_set_sent_logfile(soap, "./log/getWsdlUrl_Sent.log");
+     soap_set_recv_logfile(soap, "./log/getWsdlUrl_Recv.log");
+     Authority::addSoapUsernameTokenDigest(soap, "admin", "admin");
+    if (d.GetWsdlUrl(deviceAddr, NULL, &in, out) == SOAP_OK) {
+         //out.WsdlUrl.
+    } else {
+        d.soap_print_fault(stderr);
+    }
+    return wsdlList ;
+}
+
+
 void Device::getUses(QString devServiceURL) {
 
     qDebug() << "device manager service test: getUses";

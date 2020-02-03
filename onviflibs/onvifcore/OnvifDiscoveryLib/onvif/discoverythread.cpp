@@ -1,4 +1,4 @@
-#include "discoverythread.h"
+﻿#include "discoverythread.h"
 #include "onvif/discoveryobj.h"
 #include "soap/wsddapi.h"
 

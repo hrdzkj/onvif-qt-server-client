@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <iostream>
 #include "device.h"
@@ -27,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
     discoveryObj = new DiscoveryObj(CLIENT_MODE, _metadataVersion, _xaddr, _type, _scope, _endpoint);
     connect(discoveryObj,SIGNAL(discoveredDevice(DescDevice)) ,this,SLOT(onDiscoveredDevice(DescDevice)));
     ui->setupUi(this);
+
+
 }
 
 MainWindow::~MainWindow()
@@ -37,22 +39,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::onDiscoveredDevice(DescDevice dev)
 {
-
-
     qDebug() << "\n**********************On dev found********************";
     qDebug() << "Dev found = " << dev.xAddrs;
     qDebug() << "Dev found scope = " << dev.scopes;
-
-
-//    QString name;
-//    char * pch = strstr((char*)dev.scopes.toStdString().data(), "OnvifVideoServer");
-//    if(pch > NULL){
-//        name = "OnvifVideoServer";
-//    }
-    //ui->onvifDevCB->addItem(dev.xAddrs + " " + name, QVariant::fromValue(dev));
-
     ui->onvifDevCB->addItem(dev.xAddrs + " " + dev.scopes, QVariant::fromValue(dev));
-  }
+}
 
 void MainWindow::on_btnSendProb_clicked()
 {
@@ -70,20 +61,20 @@ void MainWindow::on_btnGetMediaURL_clicked()
 
         DescDevice device = ui->onvifDevCB->currentData().value<DescDevice>();
 
-        qDebug() << "For device " << device.xAddrs;
+        Media media;
 
-        //QVector<std::string> tokens = Media::getProfileTokens(device.xAddrs);
-        QVector<std::string> tokens = Media::getProfileTokens("http://172.16.6.143/onvif/media_service");
-        //QVector<std::string> tokens = Media::getProfileTokens("http://127.0.0.1:8080");
+        char mediaSv[] ="http://10.11.3.18:80/media";
+        QVector<std::string> tokens = media.getProfileTokens(mediaSv);
 
         for(int j =0; j< tokens.size(); ++j){
             qDebug() << "Token  " << j << "= " << tokens.at(j).data();
 
         }
+
         if(tokens.size() > 0){
-            //qDebug() <<"URL = "<<  Media::getStreamURL(device.xAddrs, tokens.at(0)).data();
-            qDebug() <<"URL = "<<  Media::getStreamURL("http://172.16.6.143/onvif/media_service", tokens.at(0)).data();
+            qDebug() <<"URL = "<<  media.getStreamURL(mediaSv, tokens.at(0)).data();
         }
+
     }
 }
 

@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     QString url = "http://10.11.3.18:80/onvif/device_service";
 
 
-    device->getDeviceInformation(url);
-   //device->getServices(url);
+    //device->getDeviceInformation(url);
+   device->getServices(url);
     return a.exec();
 }

@@ -15,11 +15,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    mixPollution.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    mixPollution.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    mixPollution.ui
 
 
 DEPENDPATH += . $$PWD/../onviflibs/onvifcore/OnvifDiscoveryLib/onvif\
@@ -64,4 +67,4 @@ LIBS +=  -L$$PWD/../../OnvifDist -lOnvifDiscoveryLib\
             -L$$PWD/../OnvifDist -lOnvifPTZLib\
             -L$$PWD/../OnvifDist -lOnvifMediaLib
 
-
+CONFIG += C++11

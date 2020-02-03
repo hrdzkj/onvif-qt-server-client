@@ -1,4 +1,4 @@
-/*
+﻿/*
 	stdsoap2.c[pp] 2.8.22
 
 	gSOAP runtime engine
@@ -52,6 +52,8 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 */
 
 #define GSOAP_LIB_VERSION 20822
+
+#define SOAP_DEBUG 1  //liuyi
 
 #ifdef AS400
 # pragma convert(819)	/* EBCDIC to ASCII */
