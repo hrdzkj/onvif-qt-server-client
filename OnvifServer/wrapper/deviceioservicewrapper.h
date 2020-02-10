@@ -1,7 +1,7 @@
-#ifndef DEVICEIOSERVICEWRAPPER_H
+﻿#ifndef DEVICEIOSERVICEWRAPPER_H
 #define DEVICEIOSERVICEWRAPPER_H
 
-#include "soap/stdsoap2.h"
+#include "stdsoap2.h"
 
 
 class DeviceIOServiceWrapper

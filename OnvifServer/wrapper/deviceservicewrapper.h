@@ -1,9 +1,10 @@
-#ifndef DEVICESERVICEWRAPPER_H
+﻿#ifndef DEVICESERVICEWRAPPER_H
 #define DEVICESERVICEWRAPPER_H
-#include "soap/stdsoap2.h"
+#include "stdsoap2.h"
 
 class DeviceServiceWrapper
 {
+
 public:
     DeviceServiceWrapper(struct soap*);
     int dispatch();

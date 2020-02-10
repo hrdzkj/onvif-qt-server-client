@@ -43,6 +43,7 @@ void Device::getDeviceInformation(QString devServiceURL) {
         //fflush(stderr);
     }
 
+
     return ;
 }
 

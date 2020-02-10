@@ -1,4 +1,4 @@
-#include "mediaserviceext.h"
+﻿#include "mediaserviceext.h"
 #include <QDebug>
 #include <QObject>
 #include <QString>
@@ -9,12 +9,12 @@ MediaServiceExt::MediaServiceExt() : MediaServiceExtAbst()
 }
 
 /// Web service operation 'GetServiceCapabilities' (returns error code or SOAP_OK)
-int MediaServiceExt::GetServiceCapabilities(_mediaws__GetServiceCapabilities *mediaws__GetServiceCapabilities, _mediaws__GetServiceCapabilitiesResponse &mediaws__GetServiceCapabilitiesResponse) {
+int MediaServiceExt::GetServiceCapabilities(_trt__GetServiceCapabilities *trt__GetServiceCapabilities, _trt__GetServiceCapabilitiesResponse &trt__GetServiceCapabilitiesResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetVideoSources' (returns error code or SOAP_OK)
-int MediaServiceExt::GetVideoSources(_mediaws__GetVideoSources *mediaws__GetVideoSources, _mediaws__GetVideoSourcesResponse &mediaws__GetVideoSourcesResponse) {
+int MediaServiceExt::GetVideoSources(_trt__GetVideoSources *trt__GetVideoSources, _trt__GetVideoSourcesResponse &trt__GetVideoSourcesResponse) {
     qDebug() << "Media Service GetVideoSources in NVT\n";
 
     tt__VideoSource * ttVideoSource = new tt__VideoSource();
@@ -25,31 +25,31 @@ int MediaServiceExt::GetVideoSources(_mediaws__GetVideoSources *mediaws__GetVide
     ttVideoSource->Resolution->Height = 720;
     ttVideoSource->Resolution->Width = 1080;
 
-    mediaws__GetVideoSourcesResponse.VideoSources.push_back(ttVideoSource);
+    trt__GetVideoSourcesResponse.VideoSources.push_back(ttVideoSource);
 
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioSources' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioSources(_mediaws__GetAudioSources *mediaws__GetAudioSources, _mediaws__GetAudioSourcesResponse &mediaws__GetAudioSourcesResponse) {
+int MediaServiceExt::GetAudioSources(_trt__GetAudioSources *trt__GetAudioSources, _trt__GetAudioSourcesResponse &trt__GetAudioSourcesResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioOutputs' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioOutputs(_mediaws__GetAudioOutputs *mediaws__GetAudioOutputs, _mediaws__GetAudioOutputsResponse &mediaws__GetAudioOutputsResponse) {
+int MediaServiceExt::GetAudioOutputs(_trt__GetAudioOutputs *trt__GetAudioOutputs, _trt__GetAudioOutputsResponse &trt__GetAudioOutputsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'CreateProfile' (returns error code or SOAP_OK)
-int MediaServiceExt::CreateProfile(_mediaws__CreateProfile *mediaws__CreateProfile, _mediaws__CreateProfileResponse &mediaws__CreateProfileResponse) {
+int MediaServiceExt::CreateProfile(_trt__CreateProfile *trt__CreateProfile, _trt__CreateProfileResponse &trt__CreateProfileResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetProfile' (returns error code or SOAP_OK)
-int MediaServiceExt::GetProfile(_mediaws__GetProfile *mediaws__GetProfile, _mediaws__GetProfileResponse &mediaws__GetProfileResponse) {
+int MediaServiceExt::GetProfile(_trt__GetProfile *trt__GetProfile, _trt__GetProfileResponse &trt__GetProfileResponse) {
     qDebug() << "Media Service GetProfile in NVT\n";
 
-    if(mediaws__GetProfile->ProfileToken.compare("profile1") == 0){
+    if(trt__GetProfile->ProfileToken.compare("profile1") == 0){
 
                 tt__Profile * ttProfile = new tt__Profile();
                 ttProfile->fixed = 0;
@@ -153,11 +153,11 @@ int MediaServiceExt::GetProfile(_mediaws__GetProfile *mediaws__GetProfile, _medi
                 ttProfile->PTZConfiguration->ZoomLimits->Range->XRange->Max = 1.000000;
 
 
-                mediaws__GetProfileResponse.Profile = ttProfile;
+                trt__GetProfileResponse.Profile = ttProfile;
 
 
 
-    }else if(mediaws__GetProfile->ProfileToken.compare("profile2") == 0){
+    }else if(trt__GetProfile->ProfileToken.compare("profile2") == 0){
         tt__Profile * ttProfile2 = new tt__Profile();
         ttProfile2->fixed = 0;
         ttProfile2->token = "profile2";
@@ -263,7 +263,7 @@ int MediaServiceExt::GetProfile(_mediaws__GetProfile *mediaws__GetProfile, _medi
 
 
 
-        mediaws__GetProfileResponse.Profile = ttProfile2;
+        trt__GetProfileResponse.Profile = ttProfile2;
 
 
     }
@@ -271,7 +271,7 @@ int MediaServiceExt::GetProfile(_mediaws__GetProfile *mediaws__GetProfile, _medi
 }
 
 /// Web service operation 'GetProfiles' (returns error code or SOAP_OK)
-int MediaServiceExt::GetProfiles(_mediaws__GetProfiles *mediaws__GetProfiles, _mediaws__GetProfilesResponse &mediaws__GetProfilesResponse) {
+int MediaServiceExt::GetProfiles(_trt__GetProfiles *trt__GetProfiles, _trt__GetProfilesResponse &trt__GetProfilesResponse) {
    qDebug() << "Media Service GetProfiles in NVTTTTT\n";
 
 
@@ -378,7 +378,7 @@ int MediaServiceExt::GetProfiles(_mediaws__GetProfiles *mediaws__GetProfiles, _m
    ttProfile->PTZConfiguration->ZoomLimits->Range->XRange->Max = 1.000000;
 
 
-   mediaws__GetProfilesResponse.Profiles.push_back(ttProfile);
+   trt__GetProfilesResponse.Profiles.push_back(ttProfile);
 
 //    //Profile 2------------------------------
 
@@ -486,161 +486,161 @@ int MediaServiceExt::GetProfiles(_mediaws__GetProfiles *mediaws__GetProfiles, _m
 
 
 
-   mediaws__GetProfilesResponse.Profiles.push_back(ttProfile2);
+   trt__GetProfilesResponse.Profiles.push_back(ttProfile2);
 
    return SOAP_OK;
 }
 
 /// Web service operation 'AddVideoEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::AddVideoEncoderConfiguration(_mediaws__AddVideoEncoderConfiguration *mediaws__AddVideoEncoderConfiguration, _mediaws__AddVideoEncoderConfigurationResponse &mediaws__AddVideoEncoderConfigurationResponse) {
+int MediaServiceExt::AddVideoEncoderConfiguration(_trt__AddVideoEncoderConfiguration *trt__AddVideoEncoderConfiguration, _trt__AddVideoEncoderConfigurationResponse &trt__AddVideoEncoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'AddVideoSourceConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::AddVideoSourceConfiguration(_mediaws__AddVideoSourceConfiguration *mediaws__AddVideoSourceConfiguration, _mediaws__AddVideoSourceConfigurationResponse &mediaws__AddVideoSourceConfigurationResponse) {
+int MediaServiceExt::AddVideoSourceConfiguration(_trt__AddVideoSourceConfiguration *trt__AddVideoSourceConfiguration, _trt__AddVideoSourceConfigurationResponse &trt__AddVideoSourceConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'AddAudioEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::AddAudioEncoderConfiguration(_mediaws__AddAudioEncoderConfiguration *mediaws__AddAudioEncoderConfiguration, _mediaws__AddAudioEncoderConfigurationResponse &mediaws__AddAudioEncoderConfigurationResponse) {
+int MediaServiceExt::AddAudioEncoderConfiguration(_trt__AddAudioEncoderConfiguration *trt__AddAudioEncoderConfiguration, _trt__AddAudioEncoderConfigurationResponse &trt__AddAudioEncoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'AddAudioSourceConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::AddAudioSourceConfiguration(_mediaws__AddAudioSourceConfiguration *mediaws__AddAudioSourceConfiguration, _mediaws__AddAudioSourceConfigurationResponse &mediaws__AddAudioSourceConfigurationResponse) {
+int MediaServiceExt::AddAudioSourceConfiguration(_trt__AddAudioSourceConfiguration *trt__AddAudioSourceConfiguration, _trt__AddAudioSourceConfigurationResponse &trt__AddAudioSourceConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'AddPTZConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::AddPTZConfiguration(_mediaws__AddPTZConfiguration *mediaws__AddPTZConfiguration, _mediaws__AddPTZConfigurationResponse &mediaws__AddPTZConfigurationResponse) {
+int MediaServiceExt::AddPTZConfiguration(_trt__AddPTZConfiguration *trt__AddPTZConfiguration, _trt__AddPTZConfigurationResponse &trt__AddPTZConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'AddVideoAnalyticsConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::AddVideoAnalyticsConfiguration(_mediaws__AddVideoAnalyticsConfiguration *mediaws__AddVideoAnalyticsConfiguration, _mediaws__AddVideoAnalyticsConfigurationResponse &mediaws__AddVideoAnalyticsConfigurationResponse) {
+int MediaServiceExt::AddVideoAnalyticsConfiguration(_trt__AddVideoAnalyticsConfiguration *trt__AddVideoAnalyticsConfiguration, _trt__AddVideoAnalyticsConfigurationResponse &trt__AddVideoAnalyticsConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'AddMetadataConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::AddMetadataConfiguration(_mediaws__AddMetadataConfiguration *mediaws__AddMetadataConfiguration, _mediaws__AddMetadataConfigurationResponse &mediaws__AddMetadataConfigurationResponse) {
+int MediaServiceExt::AddMetadataConfiguration(_trt__AddMetadataConfiguration *trt__AddMetadataConfiguration, _trt__AddMetadataConfigurationResponse &trt__AddMetadataConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'AddAudioOutputConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::AddAudioOutputConfiguration(_mediaws__AddAudioOutputConfiguration *mediaws__AddAudioOutputConfiguration, _mediaws__AddAudioOutputConfigurationResponse &mediaws__AddAudioOutputConfigurationResponse) {
+int MediaServiceExt::AddAudioOutputConfiguration(_trt__AddAudioOutputConfiguration *trt__AddAudioOutputConfiguration, _trt__AddAudioOutputConfigurationResponse &trt__AddAudioOutputConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'AddAudioDecoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::AddAudioDecoderConfiguration(_mediaws__AddAudioDecoderConfiguration *mediaws__AddAudioDecoderConfiguration, _mediaws__AddAudioDecoderConfigurationResponse &mediaws__AddAudioDecoderConfigurationResponse) {
+int MediaServiceExt::AddAudioDecoderConfiguration(_trt__AddAudioDecoderConfiguration *trt__AddAudioDecoderConfiguration, _trt__AddAudioDecoderConfigurationResponse &trt__AddAudioDecoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'RemoveVideoEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::RemoveVideoEncoderConfiguration(_mediaws__RemoveVideoEncoderConfiguration *mediaws__RemoveVideoEncoderConfiguration, _mediaws__RemoveVideoEncoderConfigurationResponse &mediaws__RemoveVideoEncoderConfigurationResponse) {
+int MediaServiceExt::RemoveVideoEncoderConfiguration(_trt__RemoveVideoEncoderConfiguration *trt__RemoveVideoEncoderConfiguration, _trt__RemoveVideoEncoderConfigurationResponse &trt__RemoveVideoEncoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'RemoveVideoSourceConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::RemoveVideoSourceConfiguration(_mediaws__RemoveVideoSourceConfiguration *mediaws__RemoveVideoSourceConfiguration, _mediaws__RemoveVideoSourceConfigurationResponse &mediaws__RemoveVideoSourceConfigurationResponse) {
+int MediaServiceExt::RemoveVideoSourceConfiguration(_trt__RemoveVideoSourceConfiguration *trt__RemoveVideoSourceConfiguration, _trt__RemoveVideoSourceConfigurationResponse &trt__RemoveVideoSourceConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'RemoveAudioEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::RemoveAudioEncoderConfiguration(_mediaws__RemoveAudioEncoderConfiguration *mediaws__RemoveAudioEncoderConfiguration, _mediaws__RemoveAudioEncoderConfigurationResponse &mediaws__RemoveAudioEncoderConfigurationResponse) {
+int MediaServiceExt::RemoveAudioEncoderConfiguration(_trt__RemoveAudioEncoderConfiguration *trt__RemoveAudioEncoderConfiguration, _trt__RemoveAudioEncoderConfigurationResponse &trt__RemoveAudioEncoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'RemoveAudioSourceConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::RemoveAudioSourceConfiguration(_mediaws__RemoveAudioSourceConfiguration *mediaws__RemoveAudioSourceConfiguration, _mediaws__RemoveAudioSourceConfigurationResponse &mediaws__RemoveAudioSourceConfigurationResponse) {
+int MediaServiceExt::RemoveAudioSourceConfiguration(_trt__RemoveAudioSourceConfiguration *trt__RemoveAudioSourceConfiguration, _trt__RemoveAudioSourceConfigurationResponse &trt__RemoveAudioSourceConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'RemovePTZConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::RemovePTZConfiguration(_mediaws__RemovePTZConfiguration *mediaws__RemovePTZConfiguration, _mediaws__RemovePTZConfigurationResponse &mediaws__RemovePTZConfigurationResponse) {
+int MediaServiceExt::RemovePTZConfiguration(_trt__RemovePTZConfiguration *trt__RemovePTZConfiguration, _trt__RemovePTZConfigurationResponse &trt__RemovePTZConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'RemoveVideoAnalyticsConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::RemoveVideoAnalyticsConfiguration(_mediaws__RemoveVideoAnalyticsConfiguration *mediaws__RemoveVideoAnalyticsConfiguration, _mediaws__RemoveVideoAnalyticsConfigurationResponse &mediaws__RemoveVideoAnalyticsConfigurationResponse) {
+int MediaServiceExt::RemoveVideoAnalyticsConfiguration(_trt__RemoveVideoAnalyticsConfiguration *trt__RemoveVideoAnalyticsConfiguration, _trt__RemoveVideoAnalyticsConfigurationResponse &trt__RemoveVideoAnalyticsConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'RemoveMetadataConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::RemoveMetadataConfiguration(_mediaws__RemoveMetadataConfiguration *mediaws__RemoveMetadataConfiguration, _mediaws__RemoveMetadataConfigurationResponse &mediaws__RemoveMetadataConfigurationResponse) {
+int MediaServiceExt::RemoveMetadataConfiguration(_trt__RemoveMetadataConfiguration *trt__RemoveMetadataConfiguration, _trt__RemoveMetadataConfigurationResponse &trt__RemoveMetadataConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'RemoveAudioOutputConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::RemoveAudioOutputConfiguration(_mediaws__RemoveAudioOutputConfiguration *mediaws__RemoveAudioOutputConfiguration, _mediaws__RemoveAudioOutputConfigurationResponse &mediaws__RemoveAudioOutputConfigurationResponse) {
+int MediaServiceExt::RemoveAudioOutputConfiguration(_trt__RemoveAudioOutputConfiguration *trt__RemoveAudioOutputConfiguration, _trt__RemoveAudioOutputConfigurationResponse &trt__RemoveAudioOutputConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'RemoveAudioDecoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::RemoveAudioDecoderConfiguration(_mediaws__RemoveAudioDecoderConfiguration *mediaws__RemoveAudioDecoderConfiguration, _mediaws__RemoveAudioDecoderConfigurationResponse &mediaws__RemoveAudioDecoderConfigurationResponse) {
+int MediaServiceExt::RemoveAudioDecoderConfiguration(_trt__RemoveAudioDecoderConfiguration *trt__RemoveAudioDecoderConfiguration, _trt__RemoveAudioDecoderConfigurationResponse &trt__RemoveAudioDecoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'DeleteProfile' (returns error code or SOAP_OK)
-int MediaServiceExt::DeleteProfile(_mediaws__DeleteProfile *mediaws__DeleteProfile, _mediaws__DeleteProfileResponse &mediaws__DeleteProfileResponse) {
+int MediaServiceExt::DeleteProfile(_trt__DeleteProfile *trt__DeleteProfile, _trt__DeleteProfileResponse &trt__DeleteProfileResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetVideoSourceConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetVideoSourceConfigurations(_mediaws__GetVideoSourceConfigurations *mediaws__GetVideoSourceConfigurations, _mediaws__GetVideoSourceConfigurationsResponse &mediaws__GetVideoSourceConfigurationsResponse) {
+int MediaServiceExt::GetVideoSourceConfigurations(_trt__GetVideoSourceConfigurations *trt__GetVideoSourceConfigurations, _trt__GetVideoSourceConfigurationsResponse &trt__GetVideoSourceConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetVideoEncoderConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetVideoEncoderConfigurations(_mediaws__GetVideoEncoderConfigurations *mediaws__GetVideoEncoderConfigurations, _mediaws__GetVideoEncoderConfigurationsResponse &mediaws__GetVideoEncoderConfigurationsResponse) {
+int MediaServiceExt::GetVideoEncoderConfigurations(_trt__GetVideoEncoderConfigurations *trt__GetVideoEncoderConfigurations, _trt__GetVideoEncoderConfigurationsResponse &trt__GetVideoEncoderConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioSourceConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioSourceConfigurations(_mediaws__GetAudioSourceConfigurations *mediaws__GetAudioSourceConfigurations, _mediaws__GetAudioSourceConfigurationsResponse &mediaws__GetAudioSourceConfigurationsResponse) {
+int MediaServiceExt::GetAudioSourceConfigurations(_trt__GetAudioSourceConfigurations *trt__GetAudioSourceConfigurations, _trt__GetAudioSourceConfigurationsResponse &trt__GetAudioSourceConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioEncoderConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioEncoderConfigurations(_mediaws__GetAudioEncoderConfigurations *mediaws__GetAudioEncoderConfigurations, _mediaws__GetAudioEncoderConfigurationsResponse &mediaws__GetAudioEncoderConfigurationsResponse) {
+int MediaServiceExt::GetAudioEncoderConfigurations(_trt__GetAudioEncoderConfigurations *trt__GetAudioEncoderConfigurations, _trt__GetAudioEncoderConfigurationsResponse &trt__GetAudioEncoderConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetVideoAnalyticsConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetVideoAnalyticsConfigurations(_mediaws__GetVideoAnalyticsConfigurations *mediaws__GetVideoAnalyticsConfigurations, _mediaws__GetVideoAnalyticsConfigurationsResponse &mediaws__GetVideoAnalyticsConfigurationsResponse) {
+int MediaServiceExt::GetVideoAnalyticsConfigurations(_trt__GetVideoAnalyticsConfigurations *trt__GetVideoAnalyticsConfigurations, _trt__GetVideoAnalyticsConfigurationsResponse &trt__GetVideoAnalyticsConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetMetadataConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetMetadataConfigurations(_mediaws__GetMetadataConfigurations *mediaws__GetMetadataConfigurations, _mediaws__GetMetadataConfigurationsResponse &mediaws__GetMetadataConfigurationsResponse) {
+int MediaServiceExt::GetMetadataConfigurations(_trt__GetMetadataConfigurations *trt__GetMetadataConfigurations, _trt__GetMetadataConfigurationsResponse &trt__GetMetadataConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioOutputConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioOutputConfigurations(_mediaws__GetAudioOutputConfigurations *mediaws__GetAudioOutputConfigurations, _mediaws__GetAudioOutputConfigurationsResponse &mediaws__GetAudioOutputConfigurationsResponse) {
+int MediaServiceExt::GetAudioOutputConfigurations(_trt__GetAudioOutputConfigurations *trt__GetAudioOutputConfigurations, _trt__GetAudioOutputConfigurationsResponse &trt__GetAudioOutputConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioDecoderConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioDecoderConfigurations(_mediaws__GetAudioDecoderConfigurations *mediaws__GetAudioDecoderConfigurations, _mediaws__GetAudioDecoderConfigurationsResponse &mediaws__GetAudioDecoderConfigurationsResponse) {
+int MediaServiceExt::GetAudioDecoderConfigurations(_trt__GetAudioDecoderConfigurations *trt__GetAudioDecoderConfigurations, _trt__GetAudioDecoderConfigurationsResponse &trt__GetAudioDecoderConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetVideoSourceConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::GetVideoSourceConfiguration(_mediaws__GetVideoSourceConfiguration *mediaws__GetVideoSourceConfiguration, _mediaws__GetVideoSourceConfigurationResponse &mediaws__GetVideoSourceConfigurationResponse) {
+int MediaServiceExt::GetVideoSourceConfiguration(_trt__GetVideoSourceConfiguration *trt__GetVideoSourceConfiguration, _trt__GetVideoSourceConfigurationResponse &trt__GetVideoSourceConfigurationResponse) {
     qDebug() << "Media Service GetVideoSourceConfiguration in NVT\n";
 
-    mediaws__GetVideoSourceConfigurationResponse.Configuration = new tt__VideoSourceConfiguration();
-    mediaws__GetVideoSourceConfigurationResponse.Configuration->token = "video_source_config";
-    mediaws__GetVideoSourceConfigurationResponse.Configuration->Name = "video_source_config";
-    mediaws__GetVideoSourceConfigurationResponse.Configuration->UseCount = 1;
+    trt__GetVideoSourceConfigurationResponse.Configuration = new tt__VideoSourceConfiguration();
+    trt__GetVideoSourceConfigurationResponse.Configuration->token = "video_source_config";
+    trt__GetVideoSourceConfigurationResponse.Configuration->Name = "video_source_config";
+    trt__GetVideoSourceConfigurationResponse.Configuration->UseCount = 1;
     //ttProfile->VideoSourceConfiguration->SourceToken = "video_source";
 
-    mediaws__GetVideoSourceConfigurationResponse.Configuration->Bounds = new tt__IntRectangle();
-    mediaws__GetVideoSourceConfigurationResponse.Configuration->Bounds->height = 720;
-    mediaws__GetVideoSourceConfigurationResponse.Configuration->Bounds->width =1280;
-    mediaws__GetVideoSourceConfigurationResponse.Configuration->Bounds->y =1;
-    mediaws__GetVideoSourceConfigurationResponse.Configuration->Bounds->x =1;
+    trt__GetVideoSourceConfigurationResponse.Configuration->Bounds = new tt__IntRectangle();
+    trt__GetVideoSourceConfigurationResponse.Configuration->Bounds->height = 720;
+    trt__GetVideoSourceConfigurationResponse.Configuration->Bounds->width =1280;
+    trt__GetVideoSourceConfigurationResponse.Configuration->Bounds->y =1;
+    trt__GetVideoSourceConfigurationResponse.Configuration->Bounds->x =1;
 
 
 
@@ -649,131 +649,131 @@ int MediaServiceExt::GetVideoSourceConfiguration(_mediaws__GetVideoSourceConfigu
 }
 
 /// Web service operation 'GetVideoEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::GetVideoEncoderConfiguration(_mediaws__GetVideoEncoderConfiguration *mediaws__GetVideoEncoderConfiguration, _mediaws__GetVideoEncoderConfigurationResponse &mediaws__GetVideoEncoderConfigurationResponse) {
+int MediaServiceExt::GetVideoEncoderConfiguration(_trt__GetVideoEncoderConfiguration *trt__GetVideoEncoderConfiguration, _trt__GetVideoEncoderConfigurationResponse &trt__GetVideoEncoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioSourceConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioSourceConfiguration(_mediaws__GetAudioSourceConfiguration *mediaws__GetAudioSourceConfiguration, _mediaws__GetAudioSourceConfigurationResponse &mediaws__GetAudioSourceConfigurationResponse) {
+int MediaServiceExt::GetAudioSourceConfiguration(_trt__GetAudioSourceConfiguration *trt__GetAudioSourceConfiguration, _trt__GetAudioSourceConfigurationResponse &trt__GetAudioSourceConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioEncoderConfiguration(_mediaws__GetAudioEncoderConfiguration *mediaws__GetAudioEncoderConfiguration, _mediaws__GetAudioEncoderConfigurationResponse &mediaws__GetAudioEncoderConfigurationResponse) {
+int MediaServiceExt::GetAudioEncoderConfiguration(_trt__GetAudioEncoderConfiguration *trt__GetAudioEncoderConfiguration, _trt__GetAudioEncoderConfigurationResponse &trt__GetAudioEncoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetVideoAnalyticsConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::GetVideoAnalyticsConfiguration(_mediaws__GetVideoAnalyticsConfiguration *mediaws__GetVideoAnalyticsConfiguration, _mediaws__GetVideoAnalyticsConfigurationResponse &mediaws__GetVideoAnalyticsConfigurationResponse) {
+int MediaServiceExt::GetVideoAnalyticsConfiguration(_trt__GetVideoAnalyticsConfiguration *trt__GetVideoAnalyticsConfiguration, _trt__GetVideoAnalyticsConfigurationResponse &trt__GetVideoAnalyticsConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetMetadataConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::GetMetadataConfiguration(_mediaws__GetMetadataConfiguration *mediaws__GetMetadataConfiguration, _mediaws__GetMetadataConfigurationResponse &mediaws__GetMetadataConfigurationResponse) {
+int MediaServiceExt::GetMetadataConfiguration(_trt__GetMetadataConfiguration *trt__GetMetadataConfiguration, _trt__GetMetadataConfigurationResponse &trt__GetMetadataConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioOutputConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioOutputConfiguration(_mediaws__GetAudioOutputConfiguration *mediaws__GetAudioOutputConfiguration, _mediaws__GetAudioOutputConfigurationResponse &mediaws__GetAudioOutputConfigurationResponse) {
+int MediaServiceExt::GetAudioOutputConfiguration(_trt__GetAudioOutputConfiguration *trt__GetAudioOutputConfiguration, _trt__GetAudioOutputConfigurationResponse &trt__GetAudioOutputConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioDecoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioDecoderConfiguration(_mediaws__GetAudioDecoderConfiguration *mediaws__GetAudioDecoderConfiguration, _mediaws__GetAudioDecoderConfigurationResponse &mediaws__GetAudioDecoderConfigurationResponse) {
+int MediaServiceExt::GetAudioDecoderConfiguration(_trt__GetAudioDecoderConfiguration *trt__GetAudioDecoderConfiguration, _trt__GetAudioDecoderConfigurationResponse &trt__GetAudioDecoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetCompatibleVideoEncoderConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetCompatibleVideoEncoderConfigurations(_mediaws__GetCompatibleVideoEncoderConfigurations *mediaws__GetCompatibleVideoEncoderConfigurations, _mediaws__GetCompatibleVideoEncoderConfigurationsResponse &mediaws__GetCompatibleVideoEncoderConfigurationsResponse) {
+int MediaServiceExt::GetCompatibleVideoEncoderConfigurations(_trt__GetCompatibleVideoEncoderConfigurations *trt__GetCompatibleVideoEncoderConfigurations, _trt__GetCompatibleVideoEncoderConfigurationsResponse &trt__GetCompatibleVideoEncoderConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetCompatibleVideoSourceConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetCompatibleVideoSourceConfigurations(_mediaws__GetCompatibleVideoSourceConfigurations *mediaws__GetCompatibleVideoSourceConfigurations, _mediaws__GetCompatibleVideoSourceConfigurationsResponse &mediaws__GetCompatibleVideoSourceConfigurationsResponse) {
+int MediaServiceExt::GetCompatibleVideoSourceConfigurations(_trt__GetCompatibleVideoSourceConfigurations *trt__GetCompatibleVideoSourceConfigurations, _trt__GetCompatibleVideoSourceConfigurationsResponse &trt__GetCompatibleVideoSourceConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetCompatibleAudioEncoderConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetCompatibleAudioEncoderConfigurations(_mediaws__GetCompatibleAudioEncoderConfigurations *mediaws__GetCompatibleAudioEncoderConfigurations, _mediaws__GetCompatibleAudioEncoderConfigurationsResponse &mediaws__GetCompatibleAudioEncoderConfigurationsResponse) {
+int MediaServiceExt::GetCompatibleAudioEncoderConfigurations(_trt__GetCompatibleAudioEncoderConfigurations *trt__GetCompatibleAudioEncoderConfigurations, _trt__GetCompatibleAudioEncoderConfigurationsResponse &trt__GetCompatibleAudioEncoderConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetCompatibleAudioSourceConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetCompatibleAudioSourceConfigurations(_mediaws__GetCompatibleAudioSourceConfigurations *mediaws__GetCompatibleAudioSourceConfigurations, _mediaws__GetCompatibleAudioSourceConfigurationsResponse &mediaws__GetCompatibleAudioSourceConfigurationsResponse) {
+int MediaServiceExt::GetCompatibleAudioSourceConfigurations(_trt__GetCompatibleAudioSourceConfigurations *trt__GetCompatibleAudioSourceConfigurations, _trt__GetCompatibleAudioSourceConfigurationsResponse &trt__GetCompatibleAudioSourceConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetCompatibleVideoAnalyticsConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetCompatibleVideoAnalyticsConfigurations(_mediaws__GetCompatibleVideoAnalyticsConfigurations *mediaws__GetCompatibleVideoAnalyticsConfigurations, _mediaws__GetCompatibleVideoAnalyticsConfigurationsResponse &mediaws__GetCompatibleVideoAnalyticsConfigurationsResponse) {
+int MediaServiceExt::GetCompatibleVideoAnalyticsConfigurations(_trt__GetCompatibleVideoAnalyticsConfigurations *trt__GetCompatibleVideoAnalyticsConfigurations, _trt__GetCompatibleVideoAnalyticsConfigurationsResponse &trt__GetCompatibleVideoAnalyticsConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetCompatibleMetadataConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetCompatibleMetadataConfigurations(_mediaws__GetCompatibleMetadataConfigurations *mediaws__GetCompatibleMetadataConfigurations, _mediaws__GetCompatibleMetadataConfigurationsResponse &mediaws__GetCompatibleMetadataConfigurationsResponse) {
+int MediaServiceExt::GetCompatibleMetadataConfigurations(_trt__GetCompatibleMetadataConfigurations *trt__GetCompatibleMetadataConfigurations, _trt__GetCompatibleMetadataConfigurationsResponse &trt__GetCompatibleMetadataConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetCompatibleAudioOutputConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetCompatibleAudioOutputConfigurations(_mediaws__GetCompatibleAudioOutputConfigurations *mediaws__GetCompatibleAudioOutputConfigurations, _mediaws__GetCompatibleAudioOutputConfigurationsResponse &mediaws__GetCompatibleAudioOutputConfigurationsResponse) {
+int MediaServiceExt::GetCompatibleAudioOutputConfigurations(_trt__GetCompatibleAudioOutputConfigurations *trt__GetCompatibleAudioOutputConfigurations, _trt__GetCompatibleAudioOutputConfigurationsResponse &trt__GetCompatibleAudioOutputConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetCompatibleAudioDecoderConfigurations' (returns error code or SOAP_OK)
-int MediaServiceExt::GetCompatibleAudioDecoderConfigurations(_mediaws__GetCompatibleAudioDecoderConfigurations *mediaws__GetCompatibleAudioDecoderConfigurations, _mediaws__GetCompatibleAudioDecoderConfigurationsResponse &mediaws__GetCompatibleAudioDecoderConfigurationsResponse) {
+int MediaServiceExt::GetCompatibleAudioDecoderConfigurations(_trt__GetCompatibleAudioDecoderConfigurations *trt__GetCompatibleAudioDecoderConfigurations, _trt__GetCompatibleAudioDecoderConfigurationsResponse &trt__GetCompatibleAudioDecoderConfigurationsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetVideoSourceConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::SetVideoSourceConfiguration(_mediaws__SetVideoSourceConfiguration *mediaws__SetVideoSourceConfiguration, _mediaws__SetVideoSourceConfigurationResponse &mediaws__SetVideoSourceConfigurationResponse) {
+int MediaServiceExt::SetVideoSourceConfiguration(_trt__SetVideoSourceConfiguration *trt__SetVideoSourceConfiguration, _trt__SetVideoSourceConfigurationResponse &trt__SetVideoSourceConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetVideoEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::SetVideoEncoderConfiguration(_mediaws__SetVideoEncoderConfiguration *mediaws__SetVideoEncoderConfiguration, _mediaws__SetVideoEncoderConfigurationResponse &mediaws__SetVideoEncoderConfigurationResponse) {
+int MediaServiceExt::SetVideoEncoderConfiguration(_trt__SetVideoEncoderConfiguration *trt__SetVideoEncoderConfiguration, _trt__SetVideoEncoderConfigurationResponse &trt__SetVideoEncoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetAudioSourceConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::SetAudioSourceConfiguration(_mediaws__SetAudioSourceConfiguration *mediaws__SetAudioSourceConfiguration, _mediaws__SetAudioSourceConfigurationResponse &mediaws__SetAudioSourceConfigurationResponse) {
+int MediaServiceExt::SetAudioSourceConfiguration(_trt__SetAudioSourceConfiguration *trt__SetAudioSourceConfiguration, _trt__SetAudioSourceConfigurationResponse &trt__SetAudioSourceConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetAudioEncoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::SetAudioEncoderConfiguration(_mediaws__SetAudioEncoderConfiguration *mediaws__SetAudioEncoderConfiguration, _mediaws__SetAudioEncoderConfigurationResponse &mediaws__SetAudioEncoderConfigurationResponse) {
+int MediaServiceExt::SetAudioEncoderConfiguration(_trt__SetAudioEncoderConfiguration *trt__SetAudioEncoderConfiguration, _trt__SetAudioEncoderConfigurationResponse &trt__SetAudioEncoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetVideoAnalyticsConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::SetVideoAnalyticsConfiguration(_mediaws__SetVideoAnalyticsConfiguration *mediaws__SetVideoAnalyticsConfiguration, _mediaws__SetVideoAnalyticsConfigurationResponse &mediaws__SetVideoAnalyticsConfigurationResponse) {
+int MediaServiceExt::SetVideoAnalyticsConfiguration(_trt__SetVideoAnalyticsConfiguration *trt__SetVideoAnalyticsConfiguration, _trt__SetVideoAnalyticsConfigurationResponse &trt__SetVideoAnalyticsConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetMetadataConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::SetMetadataConfiguration(_mediaws__SetMetadataConfiguration *mediaws__SetMetadataConfiguration, _mediaws__SetMetadataConfigurationResponse &mediaws__SetMetadataConfigurationResponse) {
+int MediaServiceExt::SetMetadataConfiguration(_trt__SetMetadataConfiguration *trt__SetMetadataConfiguration, _trt__SetMetadataConfigurationResponse &trt__SetMetadataConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetAudioOutputConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::SetAudioOutputConfiguration(_mediaws__SetAudioOutputConfiguration *mediaws__SetAudioOutputConfiguration, _mediaws__SetAudioOutputConfigurationResponse &mediaws__SetAudioOutputConfigurationResponse) {
+int MediaServiceExt::SetAudioOutputConfiguration(_trt__SetAudioOutputConfiguration *trt__SetAudioOutputConfiguration, _trt__SetAudioOutputConfigurationResponse &trt__SetAudioOutputConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetAudioDecoderConfiguration' (returns error code or SOAP_OK)
-int MediaServiceExt::SetAudioDecoderConfiguration(_mediaws__SetAudioDecoderConfiguration *mediaws__SetAudioDecoderConfiguration, _mediaws__SetAudioDecoderConfigurationResponse &mediaws__SetAudioDecoderConfigurationResponse) {
+int MediaServiceExt::SetAudioDecoderConfiguration(_trt__SetAudioDecoderConfiguration *trt__SetAudioDecoderConfiguration, _trt__SetAudioDecoderConfigurationResponse &trt__SetAudioDecoderConfigurationResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetVideoSourceConfigurationOptions' (returns error code or SOAP_OK)
-int MediaServiceExt::GetVideoSourceConfigurationOptions(_mediaws__GetVideoSourceConfigurationOptions *mediaws__GetVideoSourceConfigurationOptions, _mediaws__GetVideoSourceConfigurationOptionsResponse &mediaws__GetVideoSourceConfigurationOptionsResponse) {
+int MediaServiceExt::GetVideoSourceConfigurationOptions(_trt__GetVideoSourceConfigurationOptions *trt__GetVideoSourceConfigurationOptions, _trt__GetVideoSourceConfigurationOptionsResponse &trt__GetVideoSourceConfigurationOptionsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetVideoEncoderConfigurationOptions' (returns error code or SOAP_OK)
-int MediaServiceExt::GetVideoEncoderConfigurationOptions(_mediaws__GetVideoEncoderConfigurationOptions *mediaws__GetVideoEncoderConfigurationOptions, _mediaws__GetVideoEncoderConfigurationOptionsResponse &mediaws__GetVideoEncoderConfigurationOptionsResponse) {
+int MediaServiceExt::GetVideoEncoderConfigurationOptions(_trt__GetVideoEncoderConfigurationOptions *trt__GetVideoEncoderConfigurationOptions, _trt__GetVideoEncoderConfigurationOptionsResponse &trt__GetVideoEncoderConfigurationOptionsResponse) {
 
-//    mediaws__GetVideoEncoderConfigurationOptionsResponse.Options = new tt__VideoEncoderConfigurationOptions;
-//    mediaws__GetVideoEncoderConfigurationOptionsResponse.Options->H264 = new tt__H264Options;
-//    mediaws__GetVideoEncoderConfigurationOptionsResponse.Options->H264-> = new tt__H264Options;
+//    trt__GetVideoEncoderConfigurationOptionsResponse.Options = new tt__VideoEncoderConfigurationOptions;
+//    trt__GetVideoEncoderConfigurationOptionsResponse.Options->H264 = new tt__H264Options;
+//    trt__GetVideoEncoderConfigurationOptionsResponse.Options->H264-> = new tt__H264Options;
 
 //    ttProfile2->VideoSourceConfiguration->Bounds = new tt__IntRectangle();
 //    ttProfile2->VideoSourceConfiguration->Bounds->height = 720;
@@ -820,120 +820,120 @@ int MediaServiceExt::GetVideoEncoderConfigurationOptions(_mediaws__GetVideoEncod
 }
 
 /// Web service operation 'GetAudioSourceConfigurationOptions' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioSourceConfigurationOptions(_mediaws__GetAudioSourceConfigurationOptions *mediaws__GetAudioSourceConfigurationOptions, _mediaws__GetAudioSourceConfigurationOptionsResponse &mediaws__GetAudioSourceConfigurationOptionsResponse) {
+int MediaServiceExt::GetAudioSourceConfigurationOptions(_trt__GetAudioSourceConfigurationOptions *trt__GetAudioSourceConfigurationOptions, _trt__GetAudioSourceConfigurationOptionsResponse &trt__GetAudioSourceConfigurationOptionsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioEncoderConfigurationOptions' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioEncoderConfigurationOptions(_mediaws__GetAudioEncoderConfigurationOptions *mediaws__GetAudioEncoderConfigurationOptions, _mediaws__GetAudioEncoderConfigurationOptionsResponse &mediaws__GetAudioEncoderConfigurationOptionsResponse) {
+int MediaServiceExt::GetAudioEncoderConfigurationOptions(_trt__GetAudioEncoderConfigurationOptions *trt__GetAudioEncoderConfigurationOptions, _trt__GetAudioEncoderConfigurationOptionsResponse &trt__GetAudioEncoderConfigurationOptionsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetMetadataConfigurationOptions' (returns error code or SOAP_OK)
-int MediaServiceExt::GetMetadataConfigurationOptions(_mediaws__GetMetadataConfigurationOptions *mediaws__GetMetadataConfigurationOptions, _mediaws__GetMetadataConfigurationOptionsResponse &mediaws__GetMetadataConfigurationOptionsResponse) {
+int MediaServiceExt::GetMetadataConfigurationOptions(_trt__GetMetadataConfigurationOptions *trt__GetMetadataConfigurationOptions, _trt__GetMetadataConfigurationOptionsResponse &trt__GetMetadataConfigurationOptionsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioOutputConfigurationOptions' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioOutputConfigurationOptions(_mediaws__GetAudioOutputConfigurationOptions *mediaws__GetAudioOutputConfigurationOptions, _mediaws__GetAudioOutputConfigurationOptionsResponse &mediaws__GetAudioOutputConfigurationOptionsResponse) {
+int MediaServiceExt::GetAudioOutputConfigurationOptions(_trt__GetAudioOutputConfigurationOptions *trt__GetAudioOutputConfigurationOptions, _trt__GetAudioOutputConfigurationOptionsResponse &trt__GetAudioOutputConfigurationOptionsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetAudioDecoderConfigurationOptions' (returns error code or SOAP_OK)
-int MediaServiceExt::GetAudioDecoderConfigurationOptions(_mediaws__GetAudioDecoderConfigurationOptions *mediaws__GetAudioDecoderConfigurationOptions, _mediaws__GetAudioDecoderConfigurationOptionsResponse &mediaws__GetAudioDecoderConfigurationOptionsResponse) {
+int MediaServiceExt::GetAudioDecoderConfigurationOptions(_trt__GetAudioDecoderConfigurationOptions *trt__GetAudioDecoderConfigurationOptions, _trt__GetAudioDecoderConfigurationOptionsResponse &trt__GetAudioDecoderConfigurationOptionsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetGuaranteedNumberOfVideoEncoderInstances' (returns error code or SOAP_OK)
-int MediaServiceExt::GetGuaranteedNumberOfVideoEncoderInstances(_mediaws__GetGuaranteedNumberOfVideoEncoderInstances *mediaws__GetGuaranteedNumberOfVideoEncoderInstances, _mediaws__GetGuaranteedNumberOfVideoEncoderInstancesResponse &mediaws__GetGuaranteedNumberOfVideoEncoderInstancesResponse) {
+int MediaServiceExt::GetGuaranteedNumberOfVideoEncoderInstances(_trt__GetGuaranteedNumberOfVideoEncoderInstances *trt__GetGuaranteedNumberOfVideoEncoderInstances, _trt__GetGuaranteedNumberOfVideoEncoderInstancesResponse &trt__GetGuaranteedNumberOfVideoEncoderInstancesResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetStreamUri' (returns error code or SOAP_OK)
-int MediaServiceExt::GetStreamUri(_mediaws__GetStreamUri *mediaws__GetStreamUri, _mediaws__GetStreamUriResponse &mediaws__GetStreamUriResponse) {
-    qDebug() << "Media Service GetStreamUri in NVT profile token = " << mediaws__GetStreamUri->ProfileToken.data() << "\n";
+int MediaServiceExt::GetStreamUri(_trt__GetStreamUri *trt__GetStreamUri, _trt__GetStreamUriResponse &trt__GetStreamUriResponse) {
+    qDebug() << "Media Service GetStreamUri in NVT profile token = " << trt__GetStreamUri->ProfileToken.data() << "\n";
 
     tt__MediaUri *ttMediaUri = new tt__MediaUri();
     ttMediaUri->InvalidAfterConnect = true;
     ttMediaUri->InvalidAfterReboot = true;
     ttMediaUri->Timeout = 10000;
 
-    if(mediaws__GetStreamUri->ProfileToken.compare("profile1") == 0){
+    if(trt__GetStreamUri->ProfileToken.compare("profile1") == 0){
         ttMediaUri->Uri = "rtsp://172.16.6.79/test.264";
-        mediaws__GetStreamUriResponse.MediaUri = ttMediaUri;
-    } else if(mediaws__GetStreamUri->ProfileToken.compare("profile2") == 0){
+        trt__GetStreamUriResponse.MediaUri = ttMediaUri;
+    } else if(trt__GetStreamUri->ProfileToken.compare("profile2") == 0){
         ttMediaUri->Uri = "rtsp://172.16.6.79:8654/mylink";
-        mediaws__GetStreamUriResponse.MediaUri = ttMediaUri;
+        trt__GetStreamUriResponse.MediaUri = ttMediaUri;
     }
 
     return SOAP_OK;
 }
 
 /// Web service operation 'StartMulticastStreaming' (returns error code or SOAP_OK)
-int MediaServiceExt::StartMulticastStreaming(_mediaws__StartMulticastStreaming *mediaws__StartMulticastStreaming, _mediaws__StartMulticastStreamingResponse &mediaws__StartMulticastStreamingResponse) {
+int MediaServiceExt::StartMulticastStreaming(_trt__StartMulticastStreaming *trt__StartMulticastStreaming, _trt__StartMulticastStreamingResponse &trt__StartMulticastStreamingResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'StopMulticastStreaming' (returns error code or SOAP_OK)
-int MediaServiceExt::StopMulticastStreaming(_mediaws__StopMulticastStreaming *mediaws__StopMulticastStreaming, _mediaws__StopMulticastStreamingResponse &mediaws__StopMulticastStreamingResponse) {
+int MediaServiceExt::StopMulticastStreaming(_trt__StopMulticastStreaming *trt__StopMulticastStreaming, _trt__StopMulticastStreamingResponse &trt__StopMulticastStreamingResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetSynchronizationPoint' (returns error code or SOAP_OK)
-int MediaServiceExt::SetSynchronizationPoint(_mediaws__SetSynchronizationPoint *mediaws__SetSynchronizationPoint, _mediaws__SetSynchronizationPointResponse &mediaws__SetSynchronizationPointResponse) {
+int MediaServiceExt::SetSynchronizationPoint(_trt__SetSynchronizationPoint *trt__SetSynchronizationPoint, _trt__SetSynchronizationPointResponse &trt__SetSynchronizationPointResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetSnapshotUri' (returns error code or SOAP_OK)
-int MediaServiceExt::GetSnapshotUri(_mediaws__GetSnapshotUri *mediaws__GetSnapshotUri, _mediaws__GetSnapshotUriResponse &mediaws__GetSnapshotUriResponse) {
+int MediaServiceExt::GetSnapshotUri(_trt__GetSnapshotUri *trt__GetSnapshotUri, _trt__GetSnapshotUriResponse &trt__GetSnapshotUriResponse) {
     qDebug() << "Media Service GetSnapshotUri in NVT\n";
 
-    mediaws__GetSnapshotUri->ProfileToken;
+    trt__GetSnapshotUri->ProfileToken;
     tt__MediaUri *ttMediaUri = new tt__MediaUri();
     ttMediaUri->Uri = "http://www.nanowerk.com/images/nanointro3.jpg";
     ttMediaUri->InvalidAfterConnect = true;
     ttMediaUri->InvalidAfterReboot = true;
 
-    mediaws__GetSnapshotUriResponse.MediaUri = ttMediaUri;
+    trt__GetSnapshotUriResponse.MediaUri = ttMediaUri;
     return SOAP_OK;
 }
 
 /// Web service operation 'GetVideoSourceModes' (returns error code or SOAP_OK)
-int MediaServiceExt::GetVideoSourceModes(_mediaws__GetVideoSourceModes *mediaws__GetVideoSourceModes, _mediaws__GetVideoSourceModesResponse &mediaws__GetVideoSourceModesResponse) {
+int MediaServiceExt::GetVideoSourceModes(_trt__GetVideoSourceModes *trt__GetVideoSourceModes, _trt__GetVideoSourceModesResponse &trt__GetVideoSourceModesResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetVideoSourceMode' (returns error code or SOAP_OK)
-int MediaServiceExt::SetVideoSourceMode(_mediaws__SetVideoSourceMode *mediaws__SetVideoSourceMode, _mediaws__SetVideoSourceModeResponse &mediaws__SetVideoSourceModeResponse) {
+int MediaServiceExt::SetVideoSourceMode(_trt__SetVideoSourceMode *trt__SetVideoSourceMode, _trt__SetVideoSourceModeResponse &trt__SetVideoSourceModeResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetOSDs' (returns error code or SOAP_OK)
-int MediaServiceExt::GetOSDs(_mediaws__GetOSDs *mediaws__GetOSDs, _mediaws__GetOSDsResponse &mediaws__GetOSDsResponse) {
+int MediaServiceExt::GetOSDs(_trt__GetOSDs *trt__GetOSDs, _trt__GetOSDsResponse &trt__GetOSDsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetOSD' (returns error code or SOAP_OK)
-int MediaServiceExt::GetOSD(_mediaws__GetOSD *mediaws__GetOSD, _mediaws__GetOSDResponse &mediaws__GetOSDResponse) {
+int MediaServiceExt::GetOSD(_trt__GetOSD *trt__GetOSD, _trt__GetOSDResponse &trt__GetOSDResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'GetOSDOptions' (returns error code or SOAP_OK)
-int MediaServiceExt::GetOSDOptions(_mediaws__GetOSDOptions *mediaws__GetOSDOptions, _mediaws__GetOSDOptionsResponse &mediaws__GetOSDOptionsResponse) {
+int MediaServiceExt::GetOSDOptions(_trt__GetOSDOptions *trt__GetOSDOptions, _trt__GetOSDOptionsResponse &trt__GetOSDOptionsResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'SetOSD' (returns error code or SOAP_OK)
-int MediaServiceExt::SetOSD(_mediaws__SetOSD *mediaws__SetOSD, _mediaws__SetOSDResponse &mediaws__SetOSDResponse) {
+int MediaServiceExt::SetOSD(_trt__SetOSD *trt__SetOSD, _trt__SetOSDResponse &trt__SetOSDResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'CreateOSD' (returns error code or SOAP_OK)
-int MediaServiceExt::CreateOSD(_mediaws__CreateOSD *mediaws__CreateOSD, _mediaws__CreateOSDResponse &mediaws__CreateOSDResponse) {
+int MediaServiceExt::CreateOSD(_trt__CreateOSD *trt__CreateOSD, _trt__CreateOSDResponse &trt__CreateOSDResponse) {
     return SOAP_OK;
 }
 
 /// Web service operation 'DeleteOSD' (returns error code or SOAP_OK)
-int MediaServiceExt::DeleteOSD(_mediaws__DeleteOSD *mediaws__DeleteOSD, _mediaws__DeleteOSDResponse &mediaws__DeleteOSDResponse) {
+int MediaServiceExt::DeleteOSD(_trt__DeleteOSD *trt__DeleteOSD, _trt__DeleteOSDResponse &trt__DeleteOSDResponse) {
     return SOAP_OK;
 }

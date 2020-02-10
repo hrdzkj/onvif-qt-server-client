@@ -1,7 +1,7 @@
-#ifndef MEDIASERVICEWRAPPER_H
+﻿#ifndef MEDIASERVICEWRAPPER_H
 #define MEDIASERVICEWRAPPER_H
 
-#include "soap/stdsoap2.h"
+#include "gsoap/stdsoap2.h"
 
 
 class MediaServiceWrapper

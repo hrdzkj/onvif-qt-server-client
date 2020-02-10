@@ -1,4 +1,4 @@
-#include "QDebug"
+﻿#include "QDebug"
 #include "QNetworkInterface"
 #include <QHostInfo>
 #include <QNetworkConfigurationManager>
@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QString ipStr;
-    int tcpPort = 8004;
+    int tcpPort = 80;
 
     QStringList ipStrs;
     foreach (const QHostAddress &address, QNetworkInterface::allAddresses()) {

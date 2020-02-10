@@ -19,14 +19,14 @@ public:
     std::string getStreamURL(const char* mediaAddr, std::string profileToken);
 
     //liuyi add
-    string createOSD(const char *mediaAddr,string profileToken,string videoSourceToken);
-    int setOSD(const char * mediaAddr,string profileToken,string videoSourceToken,string OSDToken);
-    int showOSDOpinion(const char *mediaAddr,string profileToken,std::string videoSourceToken);
-    QVector<string> GetOSDs(const char * mediaAddr, std::string videoSourceToken);
+    string createOSD(const char *mediaAddr,string profileToken,string videoSourceConfigToken);
+    int setOSD(const char * mediaAddr,string videoSourceConfigToken,string OSDToken);
+    int showOSDOpinion(const char *mediaAddr,string videoSourceConfigToken);
+    QVector<string> getOSDs(const char * mediaAddr,string vscToken);
     int getVideoSourceToken(int profileIndex,const char* mediaAddr, std::string& videoSourceToken);
     int getcapabilities(const char * mediaAddr);
-    int GetVideoSourceConfigurationToken(const char* mediaAddr,std::string videoSourceToken, std::string& videoSourceConfigToken);
-
+    int getVideoSourceConfigurationToken(const char* mediaAddr,string profileToken,string videoSourceToken,string& videoSourceConfigToken);
+    int deleteOSD(const char * mediaAddr,string osdToken);
 };
 
 #endif // MEDIA_H

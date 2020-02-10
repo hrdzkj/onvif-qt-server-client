@@ -10,9 +10,11 @@ QT       += core
 DESTDIR = ../../libexe
 
 TARGET = OnvifMedia2Lib
-TEMPLATE = lib
+
+#TEMPLATE = lib
 TEMPLATE = app
-#CONFIG += console
+
+CONFIG += console
 
 DEFINES += MYDLL_LIBRARY
 DEFINES += WITH_DOM

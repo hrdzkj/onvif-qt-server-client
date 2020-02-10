@@ -1,8 +1,9 @@
-#ifndef DEVICESERVICE_H
+﻿#ifndef DEVICESERVICE_H
 #define DEVICESERVICE_H
 #include "onvif/deviceserviceextabst.h"
+#include "exportdef\mydll_global.h"
 
-class DeviceService
+class  MYDLLSHARED_EXPORT DeviceService
 {
 public:
     DeviceService(){

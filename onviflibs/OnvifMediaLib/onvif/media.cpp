@@ -79,7 +79,7 @@ int Media::GetVideoSourceConfigurationToken(const char* mediaAddr,std::string vi
     soap_set_recv_logfile(soap, "./log/vscToken_Recv.log");
     in.ConfigurationToken = videoSourceToken;
     Authority::addSoapUsernameTokenDigest(soap, "admin", "admin");
-    if (p.GetVideoSourceConfiguration(mediaAddr, soap_action, &in, out) == SOAP_OK) {
+    if (p.GetVideoSourceConfiguration(mediaAddr, NULL, &in, out) == SOAP_OK) {
         videoSourceConfigToken = out.Configuration->token;
           return 0;
     } else {

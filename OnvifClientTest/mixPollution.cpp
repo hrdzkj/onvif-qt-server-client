@@ -18,7 +18,7 @@ MixPollution::MixPollution(QWidget *parent) :
 
     connect(ui->createOSDbtn ,&QPushButton::clicked,
             [=]() {
-        // mixData();
+         mixData();
         //midaMixData();
         //showOSDOption();
         getGetServiceCapabilities();
@@ -38,6 +38,7 @@ void MixPollution::getGetServiceCapabilities(){
 void MixPollution::mixData(){
     Device device;
     char url[] = "http://10.13.1.12:80/onvif/device_service";
+    //char url[] = "http://172.16.29.181:8080/onvif/device_service";
     device.getWsdlUrl(url);
 
     QVector<std::string> serviceList =device.getServices(url);
@@ -45,16 +46,6 @@ void MixPollution::mixData(){
     int i=0;
     for(iter=serviceList.begin();iter!=serviceList.end();iter++){
         qDebug("service[%d] %s\n",i,iter->c_str());
-        /*
-        if(strcmp(iter->c_str(), "http://www.onvif.org/ver20/media/wsdl") == 0)
-        {
-            qDebug("media[%d] %s\n",i,iter->c_str());
-        }
-        if(strcmp(iter->c_str(), "http://www.onvif.org/ver10/media/wsdl") == 0)
-        {
-            qDebug(" media[%d] %s\n", i, iter->c_str());
-        }
-        */
         i++;
     }
 
@@ -81,25 +72,28 @@ void MixPollution::midaMixData()
     QVector<string> profileTokenList;
     string profileToken, videoSourceToken,videoSourceConfigToken, OSDToken;
 
-    string url = "http://10.13.15.12:80/media";
+    string url = "http://10.11.3.18:80/media";
 
     // media->getcapabilities(url.c_str());
+
     profileTokenList = media->getProfileTokens(url.c_str());
-    if (profileTokenList.size()>=0){ //获取的OSDToken
+    if (profileTokenList.size()>=0){
         int  ret;
+        //获取VideoSourceToken
         ret = media->getVideoSourceToken(0,url.c_str(),videoSourceToken);//取第0个视频源
         if (ret!=0){
             return;
         }
 
-        /*
+       //获取VideoSourceConfigurationToken
        ret = media->GetVideoSourceConfigurationToken(url.c_str(),videoSourceToken,videoSourceConfigToken);
        if (ret==0){
            qDebug()<< QString::fromStdString(videoSourceConfigToken);
        }
        return;
-       */
 
+
+       //获取VideoSourceConfigurationToken
         OSDTokenList =media->GetOSDs(url.c_str(),videoSourceToken);
         profileToken = profileTokenList.at(0);
 
