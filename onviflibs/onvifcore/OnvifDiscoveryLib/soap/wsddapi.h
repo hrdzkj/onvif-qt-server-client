@@ -1,4 +1,4 @@
-﻿/*
+/*
 	wsddapi.h
 
 	WS-Discovery 1.1 and 1.0 (WSDD) plugin API

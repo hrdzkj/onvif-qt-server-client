@@ -51,9 +51,11 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 #ifndef WSSEAPI_H
 #define WSSEAPI_H
 
+#pragma once  // #pragma once liuyi add
 //#include "soapH.h"	/* replace with soapcpp2-generated *H.h file */
 //#include "../../OnvifMediaLib/soap/onvifmediaH.h"
 #include "../../onvifcore/OnvifDeviceLib/soap/onvifdeviceH.h"
+
 #include "smdevp.h"
 #include "mecevp.h"
 

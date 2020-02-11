@@ -1,4 +1,4 @@
-﻿/*
+/*
 	wsaapi.h
 
 	WS-Addressing plugin
@@ -49,9 +49,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 #ifndef WSAAPI_H
 #define WSAAPI_H
 
-#pragma once // #pragma once liuyi add
-//#include "soapH.h"	/* replace with soapcpp2-generated *H.h file */
-#include "../../onvifcore/OnvifDeviceLib/soap/onvifdeviceH.h"
+#include "onvifdiscoH.h"	//soapcreater onvif.bat/* replace with soapcpp2-generated *H.h file */
 
 #ifdef __cplusplus
 extern "C" {

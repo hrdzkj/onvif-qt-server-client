@@ -1,0 +1,56 @@
+
+
+1.备份文件出来
+
+(取消
+2.以下文件加入soap.H
+wsaapi.h
+wseapi.h
+）
+
+3.修改.pro文件include dependent
+# include openssl
+INCLUDEPATH += C:/openssl-1.0.2u/include \
+               ../common \
+               ../common/gsoap \
+               ../common/gsoap/plugin \
+
+SOURCES += \
+    ../common/authority.cpp \
+    ../common/gsoap/stdsoap2.cpp \
+    ../common/gsoap/duration.cpp \
+    ../common/gsoap/plugin/wsseapi.cpp \
+    ../common/gsoap/plugin/mecevp.c \
+    ../common/gsoap/plugin/smdevp.c \
+    ../common/gsoap/plugin/wsaapi.cpp \
+    ../common/gsoap/plugin/threads.c \
+    ../common/gsoap/dom.cpp \
+	
+HEADERS  += \	
+    ../common/gsoap/plugin/mecevp.h \
+    ../common/gsoap/plugin/smdevp.h \
+    ../common/gsoap/plugin/threads.h \
+    ../common/gsoap/plugin/wsseapi.h \
+    ../common/gsoap/plugin/wsaapi.h \
+    ../common/gsoap/stdsoap2.h \
+    ../common/gsoap/stlvector.h \
+    ../common/gsoap/duration.h \
+	
+	xxxH.h文件可能有重复定义：
+	inline struct SOAP_ENV__Fault * soap_new_SOAP_ENV__Fault(
+	
+wsaapi.h 	
+#include "../../onvifcore/OnvifDeviceLib/soap/onvifdeviceH.h"
+
+wseapi.h
+
+#include "../../onvifcore/OnvifDeviceLib/soap/onvifdeviceH.h"
+	#include "onvifDeviceH.h"
+
+注意事项：	
+1.）onvifdiscoH.h里面inline struct SOAP_ENV__Header * soap_new_SOAP_ENV__Header的SOAP_ENV__Header，与其他*H.h的header是不同的。
+所以这个库，需要独立出dll来调用.
+dll调用方式，只要编译出lib库和dll；使用的时候引用onvif下头文件、目录下有dll就可以使用
+
+2.）xxxC.cpp里面定义的方法也是一样的 导致不能一起引入xxxC.cpp
+
