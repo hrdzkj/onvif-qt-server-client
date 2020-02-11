@@ -14,16 +14,25 @@ TEMPLATE = lib
 
 DEFINES += MYDLL_LIBRARY
 
+# include openssl
+INCLUDEPATH += C:/openssl-1.0.2u/include \
+               ../common \
+               ../common/gsoap \
+               ../common/gsoap/plugin \
+
 SOURCES += \
+    ../common/gsoap/stdsoap2.cpp \
+    ../common/gsoap/duration.cpp \
     onvif/ptz.cpp \
     soap/onvifptzPTZBindingProxy.cpp \
     soap/onvifptzC.cpp \
     soap/onvifptzPTZBindingService.cpp \
-    soap/stdsoap2.cpp \
-    soap/duration.cpp \
     onvif/ptzserviceimplement.cpp
 
 HEADERS  += \
+    ../common/gsoap/stdsoap2.h \
+    ../common/gsoap/stlvector.h \
+    ../common/gsoap/duration.h \
     onvif/ptz.h \
     onvif/ptzservice.h \
     onvif/ptzserviceextabst.h \
@@ -31,9 +40,6 @@ HEADERS  += \
     soap/onvifptzH.h \
     soap/onvifptzStub.h \
     soap/onvifptzPTZBindingService.h \
-    soap/stdsoap2.h \
-    soap/stlvector.h \
-    soap/duration.h
 
 win32{
     LIBS += -lws2_32

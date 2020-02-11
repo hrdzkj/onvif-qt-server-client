@@ -11,28 +11,40 @@ DESTDIR = ../../OnvifDist
 TARGET = OnvifAnalyticsLib
 TEMPLATE = lib
 
+
 DEFINES += MYDLL_LIBRARY
 
+# include openssl
+INCLUDEPATH += C:/openssl-1.0.2u/include \
+               ../common \
+               ../common/gsoap \
+               ../common/gsoap/plugin \
+
 SOURCES += \
-    onvif/analyticsserviceimplement.cpp \
+    ../common/gsoap/duration.cpp \
+    ../common/gsoap/stdsoap2.cpp \
     onvif/analytics.cpp \
-    soap/stdsoap2.cpp \
+    onvif/analyticsserviceimplement.cpp \
     soap/onvifanalyticsC.cpp \
     soap/onvifanalyticsRuleEngineBindingProxy.cpp \
-    soap/onvifanalyticsRuleEngineBindingService.cpp \
-    soap/duration.cpp
+    soap/onvifanalyticsRuleEngineBindingService.cpp
+
+
 
 HEADERS  += \
+    ../common/gsoap/stdsoap2.h \
+    ../common/gsoap/stlvector.h \
+    ../common/gsoap/duration.h \
     onvif/analytics.h \
     onvif/analyticsservice.h \
-    onvif/analyticsserviceextabst.h \
-    soap/stdsoap2.h \
-    soap/stlvector.h \
-    soap/onvifanlayticsH.h \
-    soap/onvifanlayticsStub.h \
+    onvif/analyticsserviceextabst.h\
+    soap/onvifanalyticsH.h \
     soap/onvifanalyticsRuleEngineBindingProxy.h \
     soap/onvifanalyticsRuleEngineBindingService.h \
-    soap/duration.h
+    soap/onvifanalyticsStub.h \
+
+
+
 
 win32{
     LIBS += -lws2_32

@@ -14,26 +14,32 @@ TEMPLATE = lib
 
 DEFINES += MYDLL_LIBRARY
 
+# include openssl
+INCLUDEPATH += C:/openssl-1.0.2u/include \
+               ../common \
+               ../common/gsoap \
+               ../common/gsoap/plugin \
+
 SOURCES += \
+    ../common/gsoap/stdsoap2.cpp \
+    ../common/gsoap/duration.cpp \
     onvif/videoanalyticsdevice.cpp \
     onvif/videoanalyticsdeviceserviceimplement.cpp \
-    soap/stdsoap2.cpp \
     soap/onvifvideoanalyticsdeviceC.cpp \
     soap/onvifvideoanalyticsdeviceAnalyticsDeviceBindingProxy.cpp \
     soap/onvifvideoanalyticsdeviceAnalyticsDeviceBindingService.cpp \
-    soap/duration.cpp
 
 HEADERS  += \
+    ../common/gsoap/stdsoap2.h \
+    ../common/gsoap/stlvector.h \
+    ../common/gsoap/duration.h \
     onvif/videoanalyticsdevice.h \
     onvif/videoanalyticsdeviceservice.h \
     onvif/videoanalyticsdeviceserviceextabst.h \
-    soap/stdsoap2.h \
-    soap/stlvector.h \
     soap/onvifvideoanalyticsdeviceH.h \
     soap/onvifvideoanalyticsdeviceStub.h \
     soap/onvifvideoanalyticsdeviceAnalyticsDeviceBindingProxy.h \
     soap/onvifvideoanalyticsdeviceAnalyticsDeviceBindingService.h \
-    soap/duration.h
 
 win32 {
     LIBS += -lws2_32

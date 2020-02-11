@@ -25,46 +25,45 @@ LIBS += -L"C:\openssl-1.0.2u\lib" -lssleay32
 
 
 # include openssl
-INCLUDEPATH += C:\openssl-1.0.2u\include \
-               soap \
-               soap\plugin
+INCLUDEPATH += C:/openssl-1.0.2u/include \
+               ../common \
+               ../common/gsoap \
+               ../common/gsoap/plugin \
 
 
 SOURCES += \
+    ../common/authority.cpp \
+    ../common/gsoap/stdsoap2.cpp \
+    ../common/gsoap/plugin/wsseapi.cpp \
+    ../common/gsoap/plugin/mecevp.c \
+    ../common/gsoap/plugin/smdevp.c \
+    ../common/gsoap/plugin/wsaapi.cpp \
+    ../common/gsoap/plugin/threads.c \
+    ../common/gsoap/duration.cpp \
+    ../common/gsoap/dom.cpp \
 #    onvif/mediaserviceimplement.cpp \
-    soap/stdsoap2.cpp \
     soap/onvifmediaC.cpp \
 #    soap/onvifmediaMedia2BindingService.cpp \
     soap/onvifmediaMedia2BindingProxy.cpp \
-    soap/duration.cpp \
     onvif/main.cpp \
-    soap/dom.cpp \
     soap/onvifmediaC.cpp \
-    soap/plugin/wsseapi.cpp \
-    soap/plugin/mecevp.c \
-    soap/plugin/smdevp.c \
-    soap/plugin/wsaapi.cpp \
-    soap/plugin/threads.c \
-    onvif/authority.cpp \
     onvif/media2.cpp
 
 HEADERS  += \
+    ../common/gsoap/plugin/mecevp.h \
+    ../common/gsoap/plugin/smdevp.h \
+    ../common/gsoap/plugin/threads.h \
+    ../common/gsoap/plugin/wsseapi.h \
+    ../common/gsoap/plugin/wsaapi.h \
+    ../common/gsoap/stdsoap2.h \
+    ../common/gsoap/stlvector.h \
+    ../common/gsoap/duration.h \
 #    onvif/mediaservice.h \
 #    onvif/mediaserviceextabst.h \
-    soap/stdsoap2.h \
-    soap/stlvector.h \
     soap/onvifmediaH.h \
     soap/onvifmediaStub.h \
 #    soap/onvifmediaMedia2BindingService.h \
     soap/onvifmediaMedia2BindingProxy.h \
-    soap/duration.h \
-    exportdef/mydll_global.h \
-    soap/plugin/mecevp.h \
-    soap/plugin/smdevp.h \
-    soap/plugin/threads.h \
-    soap/plugin/wsseapi.h \
-    soap/plugin/wsaapi.h \
-    onvif/authority.h \
     onvif/media2.h
 
 win32{

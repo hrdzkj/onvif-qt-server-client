@@ -1,4 +1,4 @@
-/*
+﻿/*
 	wsseapi.h
 
 	WS-Security plugin.
@@ -52,7 +52,8 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 #define WSSEAPI_H
 
 //#include "soapH.h"	/* replace with soapcpp2-generated *H.h file */
-#include "onvifmediaH.h"
+//#include "../../OnvifMediaLib/soap/onvifmediaH.h"
+#include "../../onvifcore/OnvifDeviceLib/soap/onvifdeviceH.h"
 #include "smdevp.h"
 #include "mecevp.h"
 

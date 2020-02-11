@@ -13,14 +13,20 @@ TEMPLATE = lib
 
 DEFINES += MYDLL_LIBRARY
 
+
+INCLUDEPATH += ../../common \
+               ../../common/gsoap \
+               ../../common/gsoap/plugin \
+               ../../common/exportdef \
+
 SOURCES += \
     onvif/event.cpp \
     onvif/eventserviceimplement.cpp \
     soap/onvifeventC.cpp \
     soap/onvifeventPullPointSubscriptionBindingProxy.cpp \
     soap/onvifeventPullPointSubscriptionBindingService.cpp \
-    soap/stdsoap2.cpp \
-    soap/duration.cpp
+    ../../common/gsoap/stdsoap2.cpp \
+    ../../common/gsoap/duration.cpp
 
 HEADERS  += \
     onvif/event.h \
@@ -30,9 +36,10 @@ HEADERS  += \
     soap/onvifeventStub.h \
     soap/onvifeventPullPointSubscriptionBindingProxy.h \
     soap/onvifeventPullPointSubscriptionBindingService.h \
-    soap/stdsoap2.h \
-    soap/stlvector.h \
-    soap/duration.h
+    ../../common/gsoap/stdsoap2.h \
+    ../../common/gsoap/stlvector.h \
+    ../../common/gsoap/duration.h \
+    ../../common/exportdef/mydll_global.h \
 
 win32{
     LIBS += -lws2_32

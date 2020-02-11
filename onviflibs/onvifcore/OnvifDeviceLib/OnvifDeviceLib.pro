@@ -24,48 +24,52 @@ LIBS += -L"C:\openssl-1.0.2u\lib" -lssleay32
 
 # include openssl
 INCLUDEPATH += C:\openssl-1.0.2u\include \
-               soap \
-               soap\plugin
+               ../../common \
+               ../../common/gsoap \
+               ../../common/gsoap/plugin \
 
 
 
 SOURCES += \
+    ../../common/authority.cpp \
+    ../../common/gsoap/stdsoap2.cpp \
+    ../../common/gsoap/duration.cpp \
+    ../../common/gsoap/plugin/wsseapi.cpp \
+    ../../common/gsoap/plugin/mecevp.c \
+    ../../common/gsoap/plugin/smdevp.c \
+    ../../common/gsoap/plugin/wsaapi.cpp \
+    ../../common/gsoap/plugin/threads.c \
+    ../../common/gsoap/dom.cpp \
     soap/onvifdeviceC.cpp \
     soap/onvifdeviceDeviceBindingProxy.cpp \
     soap/onvifdeviceDeviceBindingService.cpp \
-    soap/stdsoap2.cpp \
-    soap/duration.cpp \
     onvif/device.cpp \
     onvif/deviceserviceimplement.cpp \
 #    onvif/main.cpp \
-    soap/dom.cpp \
     soap/onvifdeviceC.cpp \
-    soap/plugin/wsseapi.cpp \
-    soap/plugin/mecevp.c \
-    soap/plugin/smdevp.c \
-    soap/plugin/wsaapi.cpp \
-    soap/plugin/threads.c \
-    onvif/authority.cpp
+
+
 
 
 HEADERS  += \
+    ../../common/gsoap/plugin/mecevp.h \
+    ../../common/gsoap/plugin/smdevp.h \
+    ../../common/gsoap/plugin/threads.h \
+    ../../common/gsoap/plugin/wsseapi.h \
+    ../../common/gsoap/plugin/wsaapi.h \
+    ../../common/gsoap/stdsoap2.h \
+    ../../common/gsoap/stlvector.h \
+    ../../common/gsoap/duration.h\
+    ../../common/exportdef/mydll_global.h \
     soap/onvifdeviceH.h \
     soap/onvifdeviceStub.h \
     soap/onvifdeviceDeviceBindingProxy.h \
     soap/onvifdeviceDeviceBindingService.h \
-    soap/stdsoap2.h \
-    soap/stlvector.h \
-    soap/duration.h\
     onvif/deviceserviceextabst.h \
     onvif/device.h \
     onvif/deviceservice.h \
-    exportdef/mydll_global.h \
-    soap/plugin/mecevp.h \
-    soap/plugin/smdevp.h \
-    soap/plugin/threads.h \
-    soap/plugin/wsseapi.h \
-    soap/plugin/wsaapi.h \
-    onvif/authority.h
+
+
 
 win32{
     LIBS += -lws2_32

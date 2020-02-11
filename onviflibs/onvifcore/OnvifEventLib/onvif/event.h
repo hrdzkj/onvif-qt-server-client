@@ -1,8 +1,8 @@
-#ifndef EVENT_H
+﻿#ifndef EVENT_H
 #define EVENT_H
 
 #include <QString>
-#include "exportdef\mydll_global.h"
+#include "mydll_global.h"
 
 class MYDLLSHARED_EXPORT Event
 {

@@ -14,26 +14,33 @@ TEMPLATE = lib
 
 DEFINES += MYDLL_LIBRARY
 
+# include openssl
+INCLUDEPATH += C:/openssl-1.0.2u/include \
+               ../common \
+               ../common/gsoap \
+               ../common/gsoap/plugin \
+
+
 SOURCES += \
+    ../common/gsoap/stdsoap2.cpp \
+    ../common/gsoap/duration.cpp \
     onvif/recordingsearch.cpp \
     onvif/recordingsearchserviceimplement.cpp \
-    soap/stdsoap2.cpp \
     soap/onvifrecordingsearchC.cpp \
     soap/onvifrecordingsearchSearchBindingProxy.cpp \
     soap/onvifrecordingsearchSearchBindingService.cpp \
-    soap/duration.cpp
 
 HEADERS  += \
+    ../common/gsoap/stdsoap2.h \
+    ../common/gsoap/stlvector.h \
+    ../common/gsoap/duration.h \
     onvif/recordingsearch.h \
     onvif/recordingsearchservice.h \
     onvif/recordingsearchserviceextabst.h \
-    soap/stdsoap2.h \
-    soap/stlvector.h \
     soap/onvifrecordingsearchH.h \
     soap/onvifrecordingsearchStub.h \
     soap/onvifrecordingsearchSearchBindingProxy.h \
     soap/onvifrecordingsearchSearchBindingService.h \
-    soap/duration.h
 
 win32{
     LIBS += -lws2_32

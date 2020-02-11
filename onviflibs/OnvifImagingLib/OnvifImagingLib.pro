@@ -14,26 +14,31 @@ TEMPLATE = lib
 
 DEFINES += MYDLL_LIBRARY
 
+INCLUDEPATH += C:/openssl-1.0.2u/include \
+               ../common \
+               ../common/gsoap \
+               ../common/gsoap/plugin \
+
 SOURCES += \
+    ../common/gsoap/stdsoap2.cpp \
+    ../common/gsoap/duration.cpp \
     onvif/imaging.cpp \
     onvif/imagingserviceimplement.cpp \
-    soap/stdsoap2.cpp \
     soap/onvifimagingC.cpp \
     soap/onvifimagingImagingBindingService.cpp \
     soap/onvifimagingImagingBindingProxy.cpp \
-    soap/duration.cpp
 
 HEADERS  += \
+    ../common/gsoap/stdsoap2.h \
+    ../common/gsoap/stlvector.h \
+    ../common/gsoap/duration.h \
     onvif/imaging.h \
     onvif/imagingservice.h \
     onvif/imagingserviceextabst.h \
-    soap/stdsoap2.h \
-    soap/stlvector.h \
     soap/onvifimagingH.h \
     soap/onvifimagingStub.h \
     soap/onvifimagingImagingBindingService.h \
     soap/onvifimagingImagingBindingProxy.h \
-    soap/duration.h
 
 win32{
     LIBS += -lws2_32

@@ -14,32 +14,36 @@ TEMPLATE = lib
 
 DEFINES += MYDLL_LIBRARY
 
+INCLUDEPATH += ../../common \
+               ../../common/gsoap \
+               ../../common/gsoap/plugin \
+               soap \
+
 SOURCES +=\
-    soap/stdsoap2.cpp \
+    ../../common/gsoap/stdsoap2.cpp \
+    ../../common/gsoap/plugin/threads.c \
+    ../../common/gsoap/plugin/wsaapi.cpp \
+    soap/wsddapi.cpp \
     soap/onvifdiscoC.cpp \
     soap/onvifdiscoClient.cpp \
-    soap/threads.cpp \
-    soap/wsaapi.cpp \
-    soap/wsddapi.cpp \
     getopt/getopt.c \
     onvif/discoverythread.cpp \
     onvif/discoveryobj.cpp
 
 
 HEADERS  += \
-    soap/stdsoap2.h \
-    soap/stlvector.h \
+    ../../common/gsoap/stdsoap2.h \
+    ../../common/gsoap/stlvector.h \
+    ../../common/exportdef/mydll_global.h \
+    ../../common/gsoap/plugin/wsaapi.h \
+    ../../common/gsoap/plugin/threads.h \
+    soap/wsddapi.h \
     soap/onvifdiscoH.h \
     soap/onvifdiscoStub.h \
-    soap/threads.h \
-    soap/wsaapi.h \
-    soap/wsddapi.h \
     getopt/getopt.h \
     onvif/descdevice.h \
     onvif/discoverythread.h \
-    onvif/discoveryobj.h\
-    exportdef/mydll_global.h
-
+    onvif/discoveryobj.h \
 
 win32 {
     LIBS += -lws2_32
